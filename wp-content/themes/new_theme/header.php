@@ -32,7 +32,11 @@
 
     <!-- Preloader -->
 
-    <div id="preloader"></div> 
+    <!-- <div id="preloader">
+    </div>  -->
+    <video playsinline autoplay muted id="bumper">
+        <source src="<?php echo get_template_directory_uri(); ?>/img/bumper_putih.mp4" type="video/mp4">
+    </video>
 
     <!-- Progress scroll totop -->
 

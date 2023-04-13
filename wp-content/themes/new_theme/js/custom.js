@@ -386,5 +386,6 @@ paceOptions = {
     eventLag: false
 };
 Pace.on('done', function() {
-  $('#preloader').delay(500).fadeOut(800);
+//   $('#preloader').delay(500).fadeOut(800);
+  $('#bumper').delay(3800).fadeOut(200);
 });

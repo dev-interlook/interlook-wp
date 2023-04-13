@@ -2925,7 +2925,7 @@ button.mfp-arrow {
     max-width: 300px;
     position: fixed;
     z-index: 99999999999999;
-    display: block;
+    display: none;
     position: absolute;
     top: 0;
     right: 100%;
@@ -2939,6 +2939,48 @@ button.mfp-arrow {
 }
 .pace.pace-inactive .pace-progress {
     max-width: 100vw;
+}
+#bumper {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    object-fit: cover;
+    z-index: 9999999;
+}
+#bumper:after,
+#bumper:before {
+    content: '';
+    position: fixed;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    background: #111;
+    -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+#bumper:before {
+    top: 0;
+}
+#bumper:after {
+    bottom: 0;
+}
+#bumper.isdone {
+    visibility: hidden;
+    -webkit-transition-delay: 1.5s;
+    -o-transition-delay: 1.5s;
+    transition-delay: 1.5s;
+}
+#bumper.isdone:after,
+#bumper.isdone:before {
+    height: 0;
+    -webkit-transition: all 0.7s cubic-bezier(1, 0, 0.55, 1);
+    -o-transition: all 0.7s cubic-bezier(1, 0, 0.55, 1);
+    transition: all 0.7s cubic-bezier(1, 0, 0.55, 1);
+    -webkit-transition-delay: 1s;
+    -o-transition-delay: 1s;
+    transition-delay: 1s;
 }
 #preloader {
     width: 100%;

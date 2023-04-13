@@ -30,7 +30,6 @@
                             <div class="col-md-7">
                                     <h1><?php the_sub_field( 'title' ); ?></h1>
                                     <p><?php the_sub_field( 'description' ); ?></p>
-                                   
                             </div>
                         </div>
                     </div>
