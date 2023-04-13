@@ -904,17 +904,17 @@ hr {
     margin-left: -570px;
     top: 0;
     height: 100%;
-    border-left: 1px solid #323232;
+    /* border-left: 1px solid #323232;
     border-right: 1px solid #323232;
-    border-bottom: 1px solid #323232;
+    border-bottom: 1px solid #323232; */
 }
 .content-lines {
     position: absolute;
     left: 33.666666%;
     right: 33.666666%;
     height: 100%;
-    border-left: 1px solid #323232;
-    border-right: 1px solid #323232;
+    /* border-left: 1px solid #323232;
+    border-right: 1px solid #323232; */
 }
 
 
