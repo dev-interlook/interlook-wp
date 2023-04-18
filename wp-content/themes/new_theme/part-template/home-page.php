@@ -107,6 +107,7 @@
             </section>
         <?php endwhile; ?>
     <?php endif; ?>
+<!-- 
     <?php if ( have_rows( 'section_services' ) ) : ?>
         <?php while ( have_rows( 'section_services' ) ) : the_row(); ?>
 
@@ -176,34 +177,35 @@
             </div>
         </div>
     </section>
-        <?php if ( have_posts() ) : while( have_posts()  ) : the_post(); ?>
+    <?php if ( have_posts() ) : while( have_posts()  ) : the_post(); ?>
         <?php if ( have_rows( 'section_contact_us' ) ) : ?>
-	<?php while ( have_rows( 'section_contact_us' ) ) : the_row(); ?>
-       <section id="contact" class="section-padding" data-scroll-index="5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
-                        <h2 class="section-title"><?php the_sub_field( 'title' ); ?></h2>
+	        <?php while ( have_rows( 'section_contact_us' ) ) : the_row(); ?>
+                <section id="contact" class="section-padding" data-scroll-index="5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
+                                <h2 class="section-title"><?php the_sub_field( 'title' ); ?></h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-30 animate-box" data-animate-effect="fadeInUp">
+                                    <?php the_sub_field( 'description' ); ?>
+                            </div>
+                            <div class="col-md-4 mb-30 animate-box" data-animate-effect="fadeInUp">
+                                <p><b>Phone :</b> <?php the_sub_field( 'phone' ); ?></p>
+                                <p><b>Email :</b> <?php the_sub_field( 'email' ); ?></p>
+                                <p><b>Address :</b> <?php the_sub_field( 'address' ); ?></p>
+                            </div>
+                            <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">    	
+                            <?php echo do_shortcode('[contact-form-7 id="534" title="Contact"]'); ?>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 mb-30 animate-box" data-animate-effect="fadeInUp">
-                            <?php the_sub_field( 'description' ); ?>
-                    </div>
-                    <div class="col-md-4 mb-30 animate-box" data-animate-effect="fadeInUp">
-                        <p><b>Phone :</b> <?php the_sub_field( 'phone' ); ?></p>
-                        <p><b>Email :</b> <?php the_sub_field( 'email' ); ?></p>
-                        <p><b>Address :</b> <?php the_sub_field( 'address' ); ?></p>
-                    </div>
-                    <div class="col-md-4 animate-box" data-animate-effect="fadeInUp">    	
-                    <?php echo do_shortcode('[contact-form-7 id="534" title="Contact"]'); ?>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <?php endwhile; ?>
-<?php endif; ?>
-<?php endwhile; endif; ?>
+                </section>
+            <?php endwhile; ?>
+        <?php endif; ?>
+    <?php endwhile; endif; ?>
+     -->
 <?php if ( have_rows( 'section_promo' ) ) : ?>
 	<?php while ( have_rows( 'section_promo' ) ) : the_row(); ?>
 
