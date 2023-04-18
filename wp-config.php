@@ -24,13 +24,14 @@ define( 'WP_CACHE', true );
 define( 'DB_NAME', 'interlook' );
 
 /** Database username */
-define( 'DB_USER', 'interlook' );
+define( 'DB_USER', 'root' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'Bandung2022*#l00k' );
+define( 'DB_PASSWORD', 'root' );
 
 /** Database hostname */
 define( 'DB_HOST', 'localhost' );
+define( 'DB_PORT', '8889' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
