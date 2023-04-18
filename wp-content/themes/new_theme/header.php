@@ -34,9 +34,11 @@
 
     <!-- <div id="preloader">
     </div>  -->
-    <video playsinline autoplay muted id="bumper">
-        <source src="<?php echo get_template_directory_uri(); ?>/img/bumper_putih.mp4" type="video/mp4">
-    </video>
+    <div id="bumper">
+        <video playsinline autoplay muted>
+            <source src="<?php echo get_template_directory_uri(); ?>/img/bumper_putih.mp4" type="video/mp4">
+        </video>
+    </div>
 
     <!-- Progress scroll totop -->
 
@@ -53,36 +55,37 @@
     <!-- Navbar -->
 
     <nav class="navbar navbar-expand-lg">
+        <div class="row" style="width: 100%; margin: 0;">
+            <!-- Logo -->
+            <div class="col-md-2 col-sm-12 text-center">
+                <?php if ( get_field( 'logo', 'option' ) ) { ?>
+                <a class="logo" href="<?php bloginfo( 'url' ); ?>"> <img src="<?php the_field( 'logo', 'option' ); ?>" alt=""> </a>
+                <?php } ?>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="icon-bar"><i class="ti-line-double"></i></span> </button>
+            </div>
 
-        <div class="container">
+            <!-- Navbar links -->
+            <div class="col-md-8 col-sm-12 text-center" style="padding: 0;">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto">
+                        <?php if ( have_rows( 'menu', 'option' ) ) : ?>
+                            <?php while ( have_rows( 'menu', 'option' ) ) : the_row(); ?>
+                                <li class="nav-item"><a class="nav-link" href="<?php the_sub_field( 'link' ); ?>" ><?php the_sub_field( 'title' ); ?></a></li>
+                            <?php endwhile; ?>
+                        <?php else : ?>
+                            <?php // no rows found ?>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+            </div>
 
-        <!-- Logo -->
-
-        <?php if ( get_field( 'logo', 'option' ) ) { ?>
-        <a class="logo" href="<?php bloginfo( 'url' ); ?>"> <img src="<?php the_field( 'logo', 'option' ); ?>" alt=""> </a>
-        <?php } ?>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="icon-bar"><i class="ti-line-double"></i></span> </button>
-
-        <!-- Navbar links -->
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            <ul class="navbar-nav ml-auto">
-
-            <?php if ( have_rows( 'menu', 'option' ) ) : ?>
-	<?php while ( have_rows( 'menu', 'option' ) ) : the_row(); ?>
-
-                <li class="nav-item"><a class="nav-link" href="<?php the_sub_field( 'link' ); ?>" ><?php the_sub_field( 'title' ); ?></a></li>
-
-            <?php endwhile; ?>
-<?php else : ?>
-	<?php // no rows found ?>
-<?php endif; ?>    
-
-            </ul>
-
+            <div class="col-md-2 col-sm-12 collapse navbar-collapse abot fotcont" style="padding: 0px 0px 0px 0px;">
+                <div class="social-icon text-center" style="width: 100%;"> 
+                    <a href="<?php the_sub_field( 'facebook' ); ?>"><i class="ti-facebook mx-1"></i></a>
+                    <a href="<?php the_sub_field( 'twitter' ); ?>"><i class="ti-twitter mx-1"></i></a> 
+                    <a href="<?php the_sub_field( 'instagram' ); ?>"><i class="ti-instagram mx-1"></i></a> 
+                    <a href="<?php the_sub_field( 'pinterest' ); ?>"><i class="ti-pinterest mx-1"></i></a> 
+                </div>
+            </div>
         </div>
-
-        </div>
-
     </nav>

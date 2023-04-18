@@ -56,10 +56,10 @@
                 <div style="margin: 0px 10% 0px 10%;">
                     <div class="card" style="background-color: #2d2d2d;">
                         <div class="row animate-box card-body" data-animate-effect="fadeInUp">
-                            <div class="col-md-4">
-                                <h2 class="section-title px-5 py-5"><?php the_sub_field( 'title' ); ?></h2>
+                            <div class="col-md-12 px-5 align-self-center">
+                                <h2 class="section-title"><?php the_sub_field( 'title' ); ?></h2>
                             </div>
-                            <div class="col-md-8 px-5 py-5">
+                            <div class="col-md-12 px-5">
                                 <?php the_sub_field( 'description' ); ?>
                             </div>
                         </div>
