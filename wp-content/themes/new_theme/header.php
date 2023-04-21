@@ -81,10 +81,10 @@
 
             <div class="col-md-2 col-sm-12 collapse navbar-collapse abot fotcont" style="padding: 0px 0px 0px 0px;">
                 <div class="social-icon text-center" style="width: 100%;"> 
-                    <a href="<?php the_sub_field( 'facebook' ); ?>"><i class="ti-facebook mx-1"></i></a>
-                    <a href="<?php the_sub_field( 'twitter' ); ?>"><i class="ti-twitter mx-1"></i></a> 
-                    <a href="<?php the_sub_field( 'instagram' ); ?>"><i class="ti-instagram mx-1"></i></a> 
-                    <a href="<?php the_sub_field( 'pinterest' ); ?>"><i class="ti-pinterest mx-1"></i></a> 
+                    <a href="<?php the_sub_field( 'facebook' ); ?>"><i class="ti-facebook mx-2"></i></a>
+                    <a href="<?php the_sub_field( 'twitter' ); ?>"><i class="ti-twitter mx-2"></i></a> 
+                    <a href="<?php the_sub_field( 'instagram' ); ?>"><i class="ti-instagram mx-2"></i></a> 
+                    <a href="<?php the_sub_field( 'pinterest' ); ?>"><i class="ti-pinterest mx-2"></i></a> 
                 </div>
             </div>
         </div>
