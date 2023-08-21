@@ -3847,35 +3847,17 @@ button.cf7mls_next {background: #f28300 !important;}
 	position: relative;
 min-width: 100%;}
 
-.text-banner{
-	text-align: center;
-	padding: 0;
-	margin: 0;
-	margin-left: 50%;
-	transform: translateX(-200%);
-	opacity: 0;
-	/* animation: 10s slide-in-anim 1.5s ease-out forwards; */
-    animation-name: slide-in-anim;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-    animation-duration: 1.5s;
-    animation-delay: 4500ms;
+.wipe-anim {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto !important; /* Center the paragraph */
+    animation: linearwipe 6s steps(60, end); 
+    animation-delay: 4.5s !important;
 }
-
-@keyframes slide-in-anim {
-	20% {
-		opacity: 0;
-	}
-	60% {
-		transform: translateX(-45%);
-	}
-	75% {
-		transform: translateX(-52%);
-	}
-	100% {
-		opacity: 1;
-		transform: translateX(-50%);
-	}
+  
+@keyframes linearwipe {
+    from { width: 0; }
 }
 
 
