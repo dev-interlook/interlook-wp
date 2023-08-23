@@ -14,7 +14,7 @@
                             <div class="fothead">
                                 <h6><?php the_sub_field( 'title' ); ?></h6>
                             </div>
-                            <p><?php the_sub_field( 'contnent' ); ?></p>
+                            <p class="p-light"><?php the_sub_field( 'contnent' ); ?></p>
                         </div>
                     <?php endwhile; ?>
                     </div>
@@ -30,10 +30,9 @@
                         <center><h6>Follow Us On</h6></center>
                     </div>
                     <div class="social-icon"> 
-                        <a href="<?php the_sub_field( 'facebook' ); ?>"><i class="ti-facebook"></i></a>
-                        <a href="<?php the_sub_field( 'twitter' ); ?>"><i class="ti-twitter"></i></a> 
                         <a href="<?php the_sub_field( 'instagram' ); ?>"><i class="ti-instagram"></i></a> 
-                        <a href="<?php the_sub_field( 'pinterest' ); ?>"><i class="ti-pinterest"></i></a> 
+                        <a href="<?php the_sub_field( 'youtube' ); ?>"><i class="ti-youtube"></i></a> 
+                        <a href="<?php the_sub_field( 'tiktok' ); ?>"><i class="ti-tumblr"></i></a> 
                     </div>
                     <?php endwhile; ?>
                 <?php endif; ?>

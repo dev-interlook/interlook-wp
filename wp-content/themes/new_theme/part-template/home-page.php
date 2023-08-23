@@ -54,12 +54,12 @@
         <?php while ( have_rows( 'section_about' ) ) : the_row(); ?>
             <section id="about" class="about section-padding" data-scroll-index="1">
                 <div style="margin: 0px 10% 0px 10%;">
-                    <div class="card" style="background-color: #2d2d2d;">
+                    <div class="card" style="background-color: #f4f4f4;">
                         <div class="row animate-box card-body" data-animate-effect="fadeInUp">
-                            <div class="col-md-12 px-5 align-self-center">
+                            <div class="col-md-4 col-sm-12 px-5 py-2">
                                 <h2 class="section-title"><?php the_sub_field( 'title' ); ?></h2>
                             </div>
-                            <div class="col-md-12 px-5">
+                            <div class="col-md-8 col-sm-12 px-5 py-2">
                                 <?php the_sub_field( 'description' ); ?>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                     <div class="row">
                         <div class="col-md-4"></div>
                         <div class="col-md-8">
-                            <h2 class="section-title"><?php the_sub_field( 'title' ); ?></h2>
+                            <h5 class="section-sub-title"><?php the_sub_field( 'title' ); ?></h5>
 
                             <div class="owl-carousel owl-theme">
                             <?php if ( have_rows( 'projects' ) ) : ?>
@@ -207,12 +207,13 @@
     <?php endwhile; endif; ?>
      -->
 <?php if ( have_rows( 'section_promo' ) ) : ?>
-	<?php while ( have_rows( 'section_promo' ) ) : the_row(); ?>
+    <?php while ( have_rows( 'section_promo' ) ) : the_row(); ?>
 
         <section class="testimonials">
           <div class="background bg-img bg-fixed section-padding pb-0" data-background="<?php the_sub_field( 'background' ); ?>" data-overlay-dark="3">
                 <div class="container">
-                    <div class="row">
+                    <div class="row" style="height: 50vh;">
+                        <!--
                         <div class="col-md-6">
                             <div class="vid-area">
                                 <div class="vid-icon">
@@ -231,8 +232,9 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <?php if ( have_rows( 'review' ) ) : ?>
-			<?php while ( have_rows( 'review' ) ) : the_row(); ?>
+                        <?php while ( have_rows( 'review' ) ) : the_row(); ?>
                         <div class="col-md-5 offset-md-1">
                             <div class="testimonials-box animate-box" data-animate-effect="fadeInUp">
                                 <div class="head-box">
@@ -240,7 +242,7 @@
                                 </div>
                                 <div class="owl-carousel owl-theme">
                                 <?php if ( have_rows( 'say' ) ) : ?>
-					<?php while ( have_rows( 'say' ) ) : the_row(); ?>
+                                    <?php while ( have_rows( 'say' ) ) : the_row(); ?>
                                     <div class="item"> <span class="quote">
                                         <img src="<?php echo get_template_directory_uri(); ?>/img/quot.png" alt="">
                                     </span>
@@ -253,20 +255,20 @@
                                         </div>
                                     </div>
                                     <?php endwhile; ?>
-				<?php else : ?>
-					<?php // no rows found ?>
-				<?php endif; ?>
-		
+                                <?php else : ?>
+                                    <?php // no rows found ?>
+                                <?php endif; ?>
                                 </div>
                             </div>
                         </div>
                         <?php endwhile; ?>
-		<?php endif; ?>
+                        <?php endif; ?>
+                        -->
                     </div>
                 </div>
             </div>
         </section>
-        <?php endwhile; ?>
+    <?php endwhile; ?>
 <?php endif; ?>
        <section class="clients">
             <div class="container">

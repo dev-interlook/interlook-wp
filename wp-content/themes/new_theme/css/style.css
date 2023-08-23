@@ -72,9 +72,9 @@ body {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.75em;
-    color: #999;
+    color: #000;
     overflow-x: hidden !important;
-    background: #111111;
+    background: #ffffff;
 }
 p {
     /* font-family: 'Didact Gothic', sans-serif; */
@@ -82,8 +82,11 @@ p {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.75em;
-    color: #999;
+    color: #000;
     margin-bottom: 20px;
+}
+.p-light {
+    color: #999;
 }
 h1,
 h2,
@@ -333,28 +336,42 @@ input[type="checkbox"] {
     margin-bottom: 20px;
 }
 .section-title {
-    font-size: 40px;
+    font-size: 32px;
     font-family: 'Oswald', sans-serif;
     font-weight: 400;
-    color: #fff;
-    text-transform: uppercase;
+    /* color: #fff; */
+    /* text-transform: uppercase; */
     position: relative;
-    letter-spacing: 10px;
-    word-spacing: 5px;
-    margin-bottom: 30px;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    margin-bottom: 20px;
 }
 .section-title span {
     color: #F28300;
 }
 .section-title2 {
-    font-size: 35px;
+    font-size: 28px;
     font-weight: 300;
     color: #F28300;
     position: relative;
     line-height: 1.25em;
     margin-bottom: 30px;
     letter-spacing: 3px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
+}
+.section-sub-title {
+    font-size: 24px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    color: #fff;
+    /* text-transform: uppercase; */
+    position: relative;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    margin-bottom: 20px;
+}
+.section-sub-title span {
+    color: #F28300;
 }
 
 
@@ -381,7 +398,7 @@ input[type="checkbox"] {
     font-weight: 300;
     color: #fff;
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     margin: 5px 5px;
     -webkit-transition: all .4s;
     transition: all .4s;
