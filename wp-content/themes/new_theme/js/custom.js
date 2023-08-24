@@ -387,5 +387,5 @@ paceOptions = {
 };
 Pace.on('done', function() {
 //   $('#preloader').delay(500).fadeOut(800);
-  $('#bumper').delay(3800).slideUp(200);
+    $('#bumper').delay(3800).slideUp(200);
 });

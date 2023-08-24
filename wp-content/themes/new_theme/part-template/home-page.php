@@ -17,7 +17,15 @@
 ?>
 
 <?php get_header();?>
- <!-- Slider -->
+
+<!-- Preloader -->
+<div id="bumper">
+    <video playsinline autoplay muted>
+        <source src="<?php echo get_template_directory_uri(); ?>/img/bumper_putih.mp4" type="video/mp4">
+    </video>
+</div>
+
+<!-- Slider -->
 <header id="home" class="header slider-fade" data-scroll-index="0">
     <div class="owl-carousel owl-theme">
         <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
