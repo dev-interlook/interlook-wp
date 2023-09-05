@@ -393,7 +393,8 @@ input[type="checkbox"] {
     color: #F28300;
 }
 .navbar .navbar-nav .nav-link {
-    font-family: 'Oswald', sans-serif;
+    /* font-family: 'Oswald', sans-serif; */
+    font-family: 'DM Sans';
     font-size: 15px;
     font-weight: 300;
     color: #fff;
@@ -2822,7 +2823,7 @@ button.mfp-arrow {
     height: 40px;
     line-height: 40px;
     text-align: center;
-    font-size: 12px;
+    font-size: 16pt;
     border: 1px solid #373737;
     color: #999;
     border-radius: 100%;

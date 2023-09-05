@@ -62,12 +62,12 @@
         <?php while ( have_rows( 'section_about' ) ) : the_row(); ?>
             <section id="about" class="about section-padding" data-scroll-index="1">
                 <div style="margin: 0px 10% 0px 10%;">
-                    <div class="card" style="background-color: #f4f4f4;">
+                    <div class="card" style="background-color: #f4f4f4; border: none;">
                         <div class="row animate-box card-body" data-animate-effect="fadeInUp">
                             <div class="col-md-4 col-sm-12 px-5 py-2">
                                 <h2 class="section-title"><?php the_sub_field( 'title' ); ?></h2>
                             </div>
-                            <div class="col-md-8 col-sm-12 px-5 py-2">
+                            <div class="col-md-8 col-sm-12 pr-5 py-2" style="text-align: justify; margin-left: -5px;">
                                 <?php the_sub_field( 'description' ); ?>
                             </div>
                         </div>
@@ -278,7 +278,7 @@
         </section>
     <?php endwhile; ?>
 <?php endif; ?>
-       <section class="clients">
+       <!-- <section class="clients">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7 owl-carousel owl-theme">
@@ -303,5 +303,5 @@
                     </div>
                 </div>
             </div>
-        </section> 
+        </section>  -->
         <?php get_footer();?>

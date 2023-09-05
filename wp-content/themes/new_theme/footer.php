@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="main-footer dark">
+<footer class="main-footer dark" style="background-color: #000;">
     <div style="margin: 0px 10% 0px 10%;">
         <div class="row">
             <div class="col-md-4 mb-10">
@@ -30,9 +30,9 @@
                         <center><h6>Follow Us On</h6></center>
                     </div>
                     <div class="social-icon"> 
-                        <a href="<?php the_sub_field( 'instagram' ); ?>"><i class="ti-instagram"></i></a> 
-                        <a href="<?php the_sub_field( 'youtube' ); ?>"><i class="ti-youtube"></i></a> 
-                        <a href="<?php the_sub_field( 'tiktok' ); ?>"><i class="ti-tumblr"></i></a> 
+                        <a href="<?php the_sub_field( 'instagram' ); ?>"><i class="fab fa-instagram"></i></a> 
+                        <a href="<?php the_sub_field( 'youtube' ); ?>"><i class="fab fa-youtube"></i></a> 
+                        <a href="<?php the_sub_field( 'tiktok' ); ?>"><i class="fab fa-whatsapp"></i></a> 
                     </div>
                     <?php endwhile; ?>
                 <?php endif; ?>

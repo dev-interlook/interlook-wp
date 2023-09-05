@@ -17,10 +17,12 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/plugins.css"  />
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM Sans">
 
     <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
 
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-144098545-1"></script>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 
     <?php wp_head();?>
 
@@ -73,9 +75,9 @@
                 <div class="social-icon text-center" style="width: 100%;"> 
                 <?php if ( have_rows( 'social_media', 'option' ) ) : ?>
                     <?php while ( have_rows( 'social_media', 'option' ) ) : the_row(); ?>
-                        <a href="<?php the_sub_field( 'instagram' ); ?>"><i class="ti-instagram mx-2" style="color: white;"></i></a> 
-                        <a href="<?php the_sub_field( 'youtube' ); ?>"><i class="ti-youtube mx-2" style="color: white;"></i></a> 
-                        <a href="<?php the_sub_field( 'whatsapp' ); ?>"><i class="ti-themify-favicon mx-2" style="color: white;"></i></a> 
+                        <a href="<?php the_sub_field( 'instagram' ); ?>"><i class="fab fa-instagram mx-2" style="color: white; font-size: 18pt;"></i></a> 
+                        <a href="<?php the_sub_field( 'youtube' ); ?>"><i class="fab fa-youtube mx-2" style="color: white; font-size: 18pt;"></i></a> 
+                        <a href="<?php the_sub_field( 'whatsapp' ); ?>"><i class="fab fa-whatsapp mx-2" style="color: white; font-size: 18pt;"></i></a> 
                     <?php endwhile; ?>
                 <?php endif; ?>
                 </div>
