@@ -39,6 +39,14 @@
                                     <h1 class="wipe-anim"><?php the_sub_field( 'title' ); ?></h1>
                                     <p class="wipe-anim"><?php the_sub_field( 'description' ); ?></p>
                                 </div>
+                                <!-- <div class="col-md-12 text-center">
+                                    <div class="text-anim">
+                                        <h1>NEW WIPE</h1>
+                                        <p>NEW WIPE</p>
+                                        <div class="text-anim__wipe"></div>
+                                        <div class="text-anim__bg"></div>
+                                    </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

@@ -3878,4 +3878,78 @@ min-width: 100%;}
     from { width: 0; }
 }
 
+/* INI CSS UNTUK TEXT WIPE, TAPI HARUS PAKE BACKGROUND SOLID */
+/* .text-anim {
+    position: relative !important;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    width: 50%;
+    max-width: 50%;
+}
+
+.text-anim h1,
+.text-anim p {
+    visibility: hidden;
+    animation: show-text 0.5s;
+    animation-delay: 4s !important;
+    animation-fill-mode: forwards;
+}
+
+.text-anim__bg {
+    background-color: transparent;
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    top: 0;
+    left: 0;
+    animation: wipe-in 1.5s;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.30, 0, 0, 1);
+    z-index: -1;
+}
+
+.text-anim__wipe {
+    background-color: transparent;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    visibility: hidden;
+    animation: show--slide-right 1.5s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.30, 0, 0, 1);
+}
+
+@keyframes wipe-in {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+@keyframes show-text {
+    100% {
+        visibility: visible;
+    }
+}
+@keyframes show--slide-right {
+    0%{
+        visibility: visible;
+        width: 100%;
+    }
+    
+    100% {
+        width: 40%;
+        visibility: visible;
+    }
+} */
+/* END OF MASALAH TEXT WIPE */
 

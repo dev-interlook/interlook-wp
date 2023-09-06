@@ -1,6 +1,6 @@
 <!-- Footer -->
 <footer class="main-footer dark" style="background-color: #000;">
-    <div style="margin: 0px 10% 0px 10%;">
+    <div style="margin: 0px 0px 0px 10%;">
         <div class="row">
             <div class="col-md-4 mb-10">
                 <img style="width: 50%;" src="<?php echo get_template_directory_uri(); ?>/img/interlook-logo.png" alt="Interlook Logo">
@@ -26,10 +26,10 @@
             <div class="col-md-4 mb-10 abot fotcont">
                 <?php if ( have_rows( 'sosial_media', 'option' ) ) : ?>
                     <?php while ( have_rows( 'sosial_media', 'option' ) ) : the_row(); ?>
-                    <div class="fothead">
-                        <center><h6>Follow Us On</h6></center>
+                    <div class="fothead text-right" style="margin-right: 52px;">
+                        <h6>Follow Us On</h6>
                     </div>
-                    <div class="social-icon"> 
+                    <div class="social-icon text-right" style="margin-right: 30px;"> 
                         <a href="<?php the_sub_field( 'instagram' ); ?>"><i class="fab fa-instagram"></i></a> 
                         <a href="<?php the_sub_field( 'youtube' ); ?>"><i class="fab fa-youtube"></i></a> 
                         <a href="<?php the_sub_field( 'tiktok' ); ?>"><i class="fab fa-whatsapp"></i></a> 
