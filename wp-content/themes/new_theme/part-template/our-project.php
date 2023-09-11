@@ -12,7 +12,51 @@
 
  */
 
+global $wpdb;
+$current_url = explode('?',$_SERVER['REQUEST_URI'])[0];
 
+// Category Project
+$category_query = "
+    SELECT t.* FROM wp0k_terms t
+    JOIN wp0k_term_taxonomy tt ON tt.term_id = t.term_id
+    WHERE tt.parent IN (
+        SELECT sub_t.term_id FROM wp0k_terms sub_t
+        WHERE sub_t.slug = 'project'
+    )
+";
+$category_results = $wpdb->get_results($category_query);
+
+// List Project
+$selected_category = count($category_results) ? $category_results[0]->term_id : 0;
+if (isset($_GET['c'])) {
+    $selected_category = $_GET['c'];
+}
+$project_query = "
+    SELECT p.* FROM wp0k_posts p
+    JOIN wp0k_term_relationships tr ON tr.object_id = p.ID
+    JOIN wp0k_term_taxonomy tt ON tt.term_taxonomy_id = tr.term_taxonomy_id
+    WHERE tt.term_id = $selected_category
+    GROUP BY p.ID
+";
+$project_results = $wpdb->get_results($project_query);
+
+function getPostmetaData($post_id) {
+    global $wpdb;
+
+    $query = "
+        SELECT * FROM wp0k_postmeta
+        WHERE post_id = $post_id
+        AND meta_key NOT LIKE '\\_%'
+    ";
+    $results = $wpdb->get_results($query);
+
+    $postmeta = [];
+    foreach ($results as $row) {
+        $postmeta[$row->meta_key] = $row->meta_value;
+    }
+
+    return $postmeta;
+}
 
 ?>
 
@@ -35,6 +79,50 @@
         <!-- Project Page -->
         <section class="section-padding2">
             <div class="container">
+                <br><br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="section-title2">Category</h2>
+                    </div>
+                    <div class="col-md-12">
+                    <?php
+                    if (is_array($category_results) && count($category_results)) :
+                        foreach ($category_results as $row) :
+                    ?>
+                        <a href="<?=$current_url?>?c=<?=$row->term_id?>">
+                            <?php if ($selected_category == $row->term_id) : ?>
+                            <span style="color: #1e73be; text-decoration: underline;"><?=$row->name?></span>
+                            <?php else : ?>
+                            <span><?=$row->name?></span>
+                            <?php endif; ?>
+                        </a>
+                        <br>
+                    <?php
+                        endforeach;
+                    endif;
+                    ?>
+                    </div>
+
+                    <div class="col-md-12">
+                        <h2 class="section-title2">Projects</h2>
+                    </div>
+                    <div class="col-md-12">
+                    <?php
+                    if (is_array($project_results) && count($project_results)) :
+                        foreach ($project_results as $row) :
+                            $postmeta = getPostmetaData($row->ID);
+                    ?>
+                        <img src="<?=wp_get_attachment_image_url($postmeta['cover'])?>" alt="Project Cover">
+                        <span><?=$row->post_title?></span>
+                        <span><?=$postmeta['content']?></span>
+                    <?php
+                        endforeach;
+                    endif;
+                    ?>
+                    </div>
+                </div>
+                <br><br>
+
                 <div class="row">
                     <div class="col-md-12">
                         <h2 class="section-title2">Cotton House</h2>
