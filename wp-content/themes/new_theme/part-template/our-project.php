@@ -113,7 +113,9 @@ function getPostmetaData($post_id) {
                             $postmeta = getPostmetaData($row->ID);
                     ?>
                         <img src="<?=wp_get_attachment_image_url($postmeta['cover'])?>" alt="Project Cover">
-                        <span><?=$row->post_title?></span>
+                        <a href="<?=get_site_url()?>/projects/<?=$row->post_name?>">
+                            <span><?=$row->post_title?></span>
+                        </a>
                         <span><?=$postmeta['content']?></span>
                     <?php
                         endforeach;
