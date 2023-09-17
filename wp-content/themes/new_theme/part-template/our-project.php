@@ -122,8 +122,7 @@ function getPostmetaData($post_id) {
     <?php if ( $bg_image ) { ?>
     <!-- <section class="banner-header banner-img valign bg-img bg-fixed" data-overlay-darkgray="5" data-background="<?php echo $bg_image['url']; ?>"> -->
     <?php } ?>
-        
-    </section>
+    <!-- </section> -->
     <!-- Project Page -->
     <section class="section-padding2 mt-80">
         <div class="container">
