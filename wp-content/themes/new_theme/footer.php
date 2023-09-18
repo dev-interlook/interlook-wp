@@ -3,7 +3,7 @@
     <div style="margin: 0px 0px 0px 10%;">
         <div class="row">
             <div class="col-md-4 mb-10">
-                <img style="width: 50%;" src="<?php echo get_template_directory_uri(); ?>/img/interlook-logo.png" alt="Interlook Logo">
+                <img style="width: 20%;" src="<?php echo get_template_directory_uri(); ?>/img/interlook-monogram.png" alt="Interlook Monogram Logo">
             </div>
 
             <div class="col-md-4 mb-10">
@@ -12,9 +12,11 @@
 	                <?php while ( have_rows( 'content_footer', 'option' ) ) : the_row(); ?>
                         <div class="item fotcont col-md-6 mb-20">
                             <div class="fothead">
-                                <h6><?php the_sub_field( 'title' ); ?></h6>
+                                <h6 style="color: white; text-transform: uppercase; font-weight: 700;">
+                                    <?php the_sub_field( 'title' ); ?>
+                                </h6>
                             </div>
-                            <p class="p-light"><?php the_sub_field( 'contnent' ); ?></p>
+                            <p class="p-light" style="color: white;"><?php the_sub_field( 'contnent' ); ?></p>
                         </div>
                     <?php endwhile; ?>
                     </div>
@@ -29,10 +31,10 @@
                     <div class="fothead text-right" style="margin-right: 52px;">
                         <h6>Follow Us On</h6>
                     </div>
-                    <div class="social-icon text-right" style="margin-right: 30px;"> 
-                        <a href="<?php the_sub_field( 'instagram' ); ?>"><i class="fab fa-instagram"></i></a> 
-                        <a href="<?php the_sub_field( 'youtube' ); ?>"><i class="fab fa-youtube"></i></a> 
-                        <a href="<?php the_sub_field( 'tiktok' ); ?>"><i class="fab fa-whatsapp"></i></a> 
+                    <div class="social-icon text-right" style="margin-right: 30px;">
+                        <a href="<?php the_sub_field( 'instagram' ); ?>"><i class="fab fa-instagram"></i></a>
+                        <a href="<?php the_sub_field( 'youtube' ); ?>"><i class="fab fa-youtube"></i></a>
+                        <a href="<?php the_sub_field( 'tiktok' ); ?>"><i class="fab fa-whatsapp"></i></a>
                     </div>
                     <?php endwhile; ?>
                 <?php endif; ?>
