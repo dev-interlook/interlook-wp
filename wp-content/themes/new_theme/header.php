@@ -40,6 +40,33 @@
         .table-borderless > thead > tr > th {
             border: none;
         }
+
+        .monogram-logo-width {
+            width: 15%;
+        }
+        .display-only-desktop {
+            display: block;
+        }
+        .display-only-phone {
+            display: none;
+        }
+        
+        @media screen and (max-width: 991px) {
+            .monogram-logo-width {
+                width: 20%;
+            }
+        }
+        @media (max-width: 767px) {
+            .monogram-logo-width {
+                width: 15%;
+            }
+            .display-only-desktop {
+                display: none;
+            }
+            .display-only-phone {
+                display: block;
+            }
+        }
     </style>
 
 </head>

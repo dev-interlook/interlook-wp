@@ -2,15 +2,28 @@
 <footer class="main-footer dark" style="background-color: #000;">
     <div style="margin: 0px 0px 0px 10%;">
         <div class="row">
-            <div class="col-md-4 mb-10">
-                <img style="width: 20%;" src="<?php echo get_template_directory_uri(); ?>/img/interlook-monogram.png" alt="Interlook Monogram Logo">
+            <div class="col-md-4 mb-20">
+                <div class="col-md-12" style="padding: 0;">
+                    <img class="monogram-logo-width" src="<?php echo get_template_directory_uri(); ?>/img/interlook-monogram.png" alt="Interlook Monogram Logo">
+                </div>
+                <div class="col-md-12 display-only-desktop" style="position: absolute; bottom: 0; left: 0;">
+                    <div class="text-left">
+                        <p style="color: white;">
+                            Copyright © <?php echo date("Y"); ?>. Interlook. <?php the_field( 'copyright', 'option' ); ?>.
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <div class="col-md-4 mb-10">
+            <div class="col-md-5 mb-10">
                 <?php if ( have_rows( 'content_footer', 'option' ) ) : ?>
                     <div class="row">
 	                <?php while ( have_rows( 'content_footer', 'option' ) ) : the_row(); ?>
+                        <?php if (get_row_index() == 3) : ?>
+                        <div class="item fotcont col-md-6 mb-30 mt-50">
+                        <?php else : ?>
                         <div class="item fotcont col-md-6 mb-20">
+                        <?php endif; ?>
                             <div class="fothead">
                                 <h6 style="color: white; text-transform: uppercase; font-weight: 700;">
                                     <?php the_sub_field( 'title' ); ?>
@@ -25,7 +38,7 @@
                 <?php endif; ?>
             </div>
             
-            <div class="col-md-4 mb-10 abot fotcont">
+            <div class="col-md-3 mb-10 abot fotcont">
                 <?php if ( have_rows( 'sosial_media', 'option' ) ) : ?>
                     <?php while ( have_rows( 'sosial_media', 'option' ) ) : the_row(); ?>
                     <div class="fothead text-right" style="margin-right: 52px;">
@@ -39,9 +52,11 @@
                     <?php endwhile; ?>
                 <?php endif; ?>
             </div>
+
+            <div class="col-md-12 mb-50"></div>
         </div>
     </div>
-    <div class="sub-footer">
+    <div class="sub-footer display-only-phone">
         <div style="margin: 0px 10% 0px 10%;">
             <div class="row">
                 <div class="col-md-4">
