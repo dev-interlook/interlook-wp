@@ -15,14 +15,6 @@
 
 
 ?>
-<style>
-    table,
-    th,
-    tr,
-    td {
-        border: none !important;
-    }
-</style>
 <?php get_header();?>
 <!-- Content -->
 <div class="content-wrapper">
@@ -58,34 +50,36 @@
             <div class="row mb-90 d-flex justify-content-center">
             <?php if ( have_rows( 'contact' ) ) : ?>
                 <?php while ( have_rows( 'contact' ) ) : the_row(); ?>
-                <table class="col-md-10 animate-box">
-                    <tr>
-                        <td class="text-center" width="10%" style="font-size: 16pt;">a</td>
-                        <td colspan="3"><?php the_sub_field( 'address' ); ?></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td class="text-center" width="10%" style="font-size: 16pt;">p</td>
-                        <td width="30%"><?php the_sub_field( 'phone' ); ?></td>
-                        <td class="text-center" width="10%" style="font-size: 16pt;">e</td>
-                        <td width="30%"><?php the_sub_field( 'email' ); ?></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td class="text-center" width="10%" style="font-size: 16pt;">ig</td>
-                        <td width="30%">
-                            <a href="<?php the_sub_field( 'ig_link' ); ?>" target="_blank">
-                                <?php the_sub_field( 'ig_name' ); ?>
-                            </a>
-                        </td>
-                        <td class="text-center" width="10%" style="font-size: 16pt;">w</td>
-                        <td width="30%">
-                            <a href="<?php the_sub_field( 'website' ); ?>">
-                            <?php the_sub_field( 'website' ); ?>
-                            </a>
-                        </td>
-                        <td></td>
-                    </tr>
+                <table class="col-md-10 animate-box table-borderless">
+                    <tbody>
+                        <tr>
+                            <td class="text-center" width="10%" style="font-size: 16pt;">a</td>
+                            <td colspan="3"><?php the_sub_field( 'address' ); ?></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center" width="10%" style="font-size: 16pt;">p</td>
+                            <td width="30%"><?php the_sub_field( 'phone' ); ?></td>
+                            <td class="text-center" width="10%" style="font-size: 16pt;">e</td>
+                            <td width="30%"><?php the_sub_field( 'email' ); ?></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center" width="10%" style="font-size: 16pt;">ig</td>
+                            <td width="30%">
+                                <a href="<?php the_sub_field( 'ig_link' ); ?>" target="_blank">
+                                    <?php the_sub_field( 'ig_name' ); ?>
+                                </a>
+                            </td>
+                            <td class="text-center" width="10%" style="font-size: 16pt;">w</td>
+                            <td width="30%">
+                                <a href="<?php the_sub_field( 'website' ); ?>">
+                                <?php the_sub_field( 'website' ); ?>
+                                </a>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </tbody>
                 </table>
                 <?php endwhile; ?>
             <?php endif; ?>
@@ -102,4 +96,4 @@
             </div>
         </div>
     </section>
-<?php get_footer();?>
+    <?php get_footer();?>
