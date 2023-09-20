@@ -119,7 +119,7 @@ a:hover {
 }
 b {
     font-weight: 400;
-    color: #F28300;
+    color: black;
 }
 /* text field */
 button,
@@ -127,7 +127,7 @@ input,
 optgroup,
 select,
 textarea {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'DM Sans', sans-serif !important;
 }
 input[type="password"]:focus,
 input[type="email"]:focus,
@@ -136,6 +136,7 @@ input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus,
 textarea:focus {
+    font-family: 'DM Sans', sans-serif !important;
     outline: none;
 }
 input[type="password"],
@@ -143,6 +144,7 @@ input[type="email"],
 input[type="text"],
 input[type="file"],
 textarea {
+    font-family: 'DM Sans', sans-serif !important;
     max-width: 100%;
     margin-bottom: 10px;
     padding: 10px 0;
@@ -158,36 +160,40 @@ textarea {
     font-family: 'Didact Gothic', sans-serif;
     font-size: 16px;
     font-weight: 400;
-    color: #999;
+    color: black;
     background-image: none;
     border-bottom: 1px solid #323232;
     border-color: ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 input:focus,
 textarea:focus {
+    font-family: 'DM Sans', sans-serif !important;
     border-bottom-width: 1px;
-    border-color: #F28300;
+    border-color: black;
 }
 input[type="submit"],
 input[type="reset"],
 input[type="button"],
 button {
+    font-family: 'DM Sans', sans-serif !important;
     text-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
     line-height: 1.75em;
     -webkit-transition: background-color .15s ease-out;
     transition: background-color .15s ease-out;
-    background: #F28300;
-    border: 1px solid transparent;
+    background: white !important;
+    color: black !important;
+    border: 1px solid black;
 }
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover,
 button:hover {
-    background-color: #323232;
-    color: #999;
-    border: 1px solid transparent;
+    font-family: 'DM Sans', sans-serif !important;
+    background-color: #323232 !important;
+    color: white !important;
+    border: 1px solid black;
 }
 select {
     padding: 10px;
@@ -3851,15 +3857,30 @@ input.wpcf7-form-control.has-spinner.wpcf7-submit.butn-dark.mt-15:hover {backgro
             }
 
 
-label {font-size: 17px;color: #f28300;font-weight: 900;}
+label {
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 17px;
+    color: black;
+    font-weight: 400;
+}
 
 input.wpcf7-form-control.has-spinner.wpcf7-submit.butn-dark.order.mt-15 {position: absolute;top: 32px;right: 19px;}
 
 .col-md-12 {position: relative;}
 
-button.cf7mls_next:hover {background: #323232 !important;}
+button.cf7mls_next:hover {
+    font-family: 'DM Sans', sans-serif !important;
+    background-color: #323232 !important;
+    color: white !important;
+    border: 1px solid black !important;
+}
 
-button.cf7mls_next {background: #f28300 !important;}
+button.cf7mls_next {
+    font-family: 'DM Sans', sans-serif !important;
+    background: white !important;
+    color: black !important;
+    border: 1px solid black !important;
+}
 
 .wpcf7-form-control-wrap {
 	position: relative;

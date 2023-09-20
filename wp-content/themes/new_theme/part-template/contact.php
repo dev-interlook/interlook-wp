@@ -31,7 +31,7 @@
         <?php endwhile; ?>
     <?php endif; ?>
     <!-- Contact -->
-    <section class="section-padding2">
+    <section>
         <div class="container">
             <div class="row">
                 <div class="col-md-12 animate-box mt-50" data-animate-effect="fadeInUp">
@@ -47,31 +47,31 @@
                     <?php echo do_shortcode('[contact-form-7 id="534" title="Contact"]'); ?>
                 </div>
             </div>
-            <div class="row mb-90 d-flex justify-content-center">
+            <div class="row mb-90 d-flex">
             <?php if ( have_rows( 'contact' ) ) : ?>
                 <?php while ( have_rows( 'contact' ) ) : the_row(); ?>
-                <table class="col-md-10 animate-box table-borderless">
+                <table class="col-md-10 animate-box table-borderless" style="padding: 0;">
                     <tbody>
                         <tr>
-                            <td class="text-center" width="10%" style="font-size: 16pt;">a</td>
+                            <td width="5%" style="font-size: 16pt;">a</td>
                             <td colspan="3"><?php the_sub_field( 'address' ); ?></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td class="text-center" width="10%" style="font-size: 16pt;">p</td>
+                            <td width="5%" style="font-size: 16pt;">p</td>
                             <td width="30%"><?php the_sub_field( 'phone' ); ?></td>
-                            <td class="text-center" width="10%" style="font-size: 16pt;">e</td>
+                            <td width="5%" style="font-size: 16pt;">e</td>
                             <td width="30%"><?php the_sub_field( 'email' ); ?></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td class="text-center" width="10%" style="font-size: 16pt;">ig</td>
+                            <td width="5%" style="font-size: 16pt;">ig</td>
                             <td width="30%">
                                 <a href="<?php the_sub_field( 'ig_link' ); ?>" target="_blank">
                                     <?php the_sub_field( 'ig_name' ); ?>
                                 </a>
                             </td>
-                            <td class="text-center" width="10%" style="font-size: 16pt;">w</td>
+                            <td width="5%" style="font-size: 16pt;">w</td>
                             <td width="30%">
                                 <a href="<?php the_sub_field( 'website' ); ?>">
                                 <?php the_sub_field( 'website' ); ?>
@@ -84,11 +84,13 @@
                 <?php endwhile; ?>
             <?php endif; ?>
             </div>
+        </div>
+        <div class="container" style="max-width: none; padding: 0;">
             <!-- Map Section -->
             <div class="row">
             <?php if ( have_rows( 'contact' ) ) : ?>
                 <?php while ( have_rows( 'contact' ) ) : the_row(); ?>
-                <div class="col-md-12 mb-30 animate-box d-flex justify-content-center" data-animate-effect="fadeInUp">
+                <div class="col-md-12 animate-box d-flex justify-content-center" data-animate-effect="fadeInUp">
                     <?php the_sub_field( 'embed_gmaps' ); ?>
                 </div>
                 <?php endwhile; ?>
