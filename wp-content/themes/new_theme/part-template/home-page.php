@@ -19,11 +19,13 @@
 <?php get_header();?>
 
 <!-- Preloader -->
+<?php if (!isset($_GET['sec'])) : ?>
 <div id="bumper">
     <video playsinline autoplay muted>
         <source src="<?php echo get_template_directory_uri(); ?>/img/bumper_putih.mp4" type="video/mp4">
     </video>
 </div>
+<?php endif; ?>
 
 <!-- Slider -->
 <header id="home" class="header slider-fade" data-scroll-index="0">
