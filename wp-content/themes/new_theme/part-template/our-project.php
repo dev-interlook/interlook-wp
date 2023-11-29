@@ -77,12 +77,17 @@ function getPostmetaData($post_id) {
     }
 
     /* Parent Container for Image Hover */
-    .content_img{
+    .content_img {
         padding: 0px 2px 2px 2px;
+    }
+    @media screen and (max-width: 768px) {
+        .content_img {
+            padding: 0px 30px 2px 30px;
+        }
     }
 
     /* Child Text Container */
-    .content_img div{
+    .content_img div {
         width: 100%;
         position: absolute;
         bottom: 0;
@@ -128,7 +133,7 @@ function getPostmetaData($post_id) {
         <div class="container">
             <br><br>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3 pb-15">
                     <div class="col-md-12">
                         <h2 class="section-title2">Our Project</h2>
                     </div>

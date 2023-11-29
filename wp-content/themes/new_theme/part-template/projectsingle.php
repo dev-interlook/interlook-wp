@@ -27,12 +27,12 @@ get_header(); ?>
     }
 
     /* Parent Container for Image Hover */
-    .content_img{
+    .content_img {
         padding: 0px 2px 2px 2px;
     }
 
     /* Child Text Container */
-    .content_img div{
+    .content_img div {
         width: 100%;
         position: absolute;
         bottom: 0;
@@ -58,15 +58,31 @@ get_header(); ?>
         opacity: 0.7;
     }
 
+    .gallery-container {
+        padding: 0px 2px 2px 2px;
+    }
+    @media screen and (max-width: 768px) {
+        .gallery-container {
+            padding: 0px 30px 2px 30px;
+        }
+    }
+
     .first-item {
         width: 100%;
     }
+    @media screen and (max-width: 768px) {
+        .first-item {
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+
     .flex-container {
         display: flex;
         align-items: stretch;
     }
     .gallery-item {
-        padding-top: 10px;
+        padding-top: 0px;
         padding-right: 10px;
     }
     .more-item {
@@ -118,7 +134,7 @@ $moreImg = $totalImg - 6;
     <!-- <section class="banner-header banner-img valign bg-img bg-fixed" data-overlay-darkgray="5" data-background="<?php the_field( 'cover' ); ?>">
     </section> -->
     <!-- Post -->
-    <section class="full-width-section mt-80">
+    <section class="full-width-section" style="margin-top: 110px;">
         <div class="block-wrapper section-padding2">
             <div class="section-wrapper container">
                 <div class="row-layout row">
@@ -154,7 +170,7 @@ $moreImg = $totalImg - 6;
                         </div>
                     </div>
 
-                    <div class="col-md-9">
+                    <div class="col-md-9 gallery-container">
                         <div class="first-item">
                         <?php if ( have_rows( 'gallery' ) ) : ?>
                             <?php while ( have_rows( 'gallery' ) ) : the_row(); ?>
