@@ -42,7 +42,7 @@
         }
 
         .monogram-logo-width {
-            width: 15%;
+            width: 50%;
         }
         .display-only-desktop {
             display: block;
@@ -53,12 +53,12 @@
         
         @media screen and (max-width: 991px) {
             .monogram-logo-width {
-                width: 20%;
+                width: 50%;
             }
         }
         @media (max-width: 767px) {
             .monogram-logo-width {
-                width: 15%;
+                width: 50%;
             }
             .display-only-desktop {
                 display: none;
