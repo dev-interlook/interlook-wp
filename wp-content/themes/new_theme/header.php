@@ -68,7 +68,6 @@
             }
         }
     </style>
-
 </head>
 
 
@@ -115,7 +114,7 @@
             </div>
 
             <div class="col-md-2 col-sm-12 collapse navbar-collapse abot fotcont" style="padding: 0px 0px 0px 0px;">
-                <div class="social-icon text-center" style="width: 100%;"> 
+                <div class="social-icon text-center" style="width: 100%;">
                 <?php if ( have_rows( 'social_media', 'option' ) ) : ?>
                     <?php while ( have_rows( 'social_media', 'option' ) ) : the_row(); ?>
                         <a href="<?php the_sub_field( 'instagram' ); ?>"><i class="fab fa-instagram mx-2" style="color: white; font-size: 18pt;"></i></a> 

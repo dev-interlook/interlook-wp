@@ -90,6 +90,15 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.magnific-popup.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/YouTubePopUp.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/custom.js"></script>
+
+<script>
+    $(document).click(function(e) {
+        if (!$(e.target).is('#navbarSupportedContent')) {
+            $('#navbarSupportedContent').collapse('hide');
+        }
+    });
+</script>
+
 <?php wp_footer();?>
 </body>
 </html>
