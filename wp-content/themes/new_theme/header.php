@@ -91,11 +91,15 @@
     <nav class="navbar navbar-expand-lg">
         <div class="row" style="width: 100%; margin: 0;">
             <!-- Logo -->
-            <div class="col-md-2 col-sm-12 text-center">
+            <div class="col-md-2 col-sm-12">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="icon-bar"><i class="ti-line-double"></i></span>
+                </button>
                 <?php if ( get_field( 'logo', 'option' ) ) { ?>
-                <a class="logo" href="<?php bloginfo( 'url' ); ?>"> <img src="<?php the_field( 'logo', 'option' ); ?>" alt=""> </a>
+                <span class="text-center" style="min-width: 70%;">
+                    <a class="logo" href="<?php bloginfo( 'url' ); ?>"> <img src="<?php the_field( 'logo', 'option' ); ?>" alt=""> </a>
+                </span>
                 <?php } ?>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="icon-bar"><i class="ti-line-double"></i></span> </button>
             </div>
 
             <!-- Navbar links -->
