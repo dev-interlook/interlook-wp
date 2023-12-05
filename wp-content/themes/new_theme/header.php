@@ -67,6 +67,13 @@
                 display: block;
             }
         }
+        @media (max-width: 480px) {
+            .sfm-floating-menu.top-right,
+            .sfm-floating-menu.bottom-right,
+            .sfm-floating-menu.middle-right {
+                right: 25px;
+            }
+        }
     </style>
 </head>
 
@@ -91,19 +98,19 @@
     <nav class="navbar navbar-expand-lg">
         <div class="row" style="width: 100%; margin: 0;">
             <!-- Logo -->
-            <div class="col-md-2 col-sm-12">
+            <div class="col-lg-2 col-md-12">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"><i class="ti-line-double"></i></span>
                 </button>
                 <?php if ( get_field( 'logo', 'option' ) ) { ?>
-                <span class="text-center" style="min-width: 70%;">
+                <span class="text-center" style="width: 70%;">
                     <a class="logo" href="<?php bloginfo( 'url' ); ?>"> <img src="<?php the_field( 'logo', 'option' ); ?>" alt=""> </a>
                 </span>
                 <?php } ?>
             </div>
 
             <!-- Navbar links -->
-            <div class="col-md-10 col-sm-12 text-center" style="padding: 0;">
+            <div class="col-lg-10 col-md-12 text-center" style="padding: 0;">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
                         <?php if ( have_rows( 'menu', 'option' ) ) : ?>
