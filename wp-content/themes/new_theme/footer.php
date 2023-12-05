@@ -97,6 +97,7 @@
             $('#navbarSupportedContent').collapse('hide');
         }
     });
+    $('textarea').attr('rows', 3)
 </script>
 
 <?php wp_footer();?>
