@@ -42,11 +42,6 @@
                 <?php endif; ?>
                 </div>
             </div>
-            <div class="row mb-90">
-                <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
-                    <?php echo do_shortcode('[contact-form-7 id="534" title="Contact"]'); ?>
-                </div>
-            </div>
             <div class="row mb-90 d-flex">
             <?php if ( have_rows( 'contact' ) ) : ?>
                 <?php while ( have_rows( 'contact' ) ) : the_row(); ?>
