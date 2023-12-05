@@ -50,6 +50,17 @@
         .display-only-phone {
             display: none;
         }
+
+        /* Override the css class plugin CF7 for input radio box */
+        .wpcf7-list-item {
+            display: block;
+            margin: 0 0 0 1em;
+        }
+        span.wpcf7-list-item-label {
+            display: inline;
+            text-decoration: none;
+            color: inherit;
+        }
         
         @media screen and (max-width: 991px) {
             .monogram-logo-width {
