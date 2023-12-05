@@ -66,6 +66,11 @@
             .monogram-logo-width {
                 width: 50%;
             }
+
+            /* Override the css class plugin CF7 for input next button */
+            .fieldset-cf7mls .cf7mls_next {
+                float: none;
+            }
         }
         @media (max-width: 767px) {
             .monogram-logo-width {
