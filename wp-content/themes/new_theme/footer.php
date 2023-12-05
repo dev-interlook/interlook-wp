@@ -98,6 +98,13 @@
         }
     });
     $('textarea').attr('rows', 3)
+
+    // Scroll to top if next button from CF7 plugin clicked
+    $('.cf7mls_next').click(function(e) {
+        document.querySelector('.fieldset-cf7mls').scrollIntoView({
+            behavior: 'smooth'
+        })
+    });
 </script>
 
 <?php wp_footer();?>
