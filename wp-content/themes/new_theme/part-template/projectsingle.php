@@ -107,6 +107,11 @@ get_header(); ?>
         padding: 0;
         margin: 0;
     }
+
+    .gallery-img-small > img {
+        object-fit: cover;
+        height: 100px;
+    }
 </style>
 
 <!-- Counting gallery item -->
@@ -203,7 +208,7 @@ $moreImg = $totalImg - 6;
 
                                     <a href="<?php the_sub_field( 'image' ); ?>" class="img-zoom">
                                         <div class="gallery-box">
-                                            <div class="gallery-img">
+                                            <div class="gallery-img gallery-img-small">
                                                 <img src="<?php the_sub_field( 'image' ); ?>" title="1" alt="1" class="img-fluid mx-auto d-block">
 
                                                 <?php if (get_row_index() == 7) : ?>
