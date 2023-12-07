@@ -89,6 +89,7 @@ function getPostmetaData($post_id) {
     /* Child Text Container */
     .content_img div {
         width: 100%;
+        height: 100%;
         position: absolute;
         bottom: 0;
         right: 0;
@@ -111,6 +112,14 @@ function getPostmetaData($post_id) {
         padding: 8px 15px;
         visibility: visible;
         opacity: 0.7;
+    }
+
+    .content_wrap {
+        display: flex;
+    }
+    .content_wrap h6 {
+        margin: 0 0 20px 20px;
+        align-self: flex-end;
     }
 </style>
 
@@ -167,8 +176,8 @@ function getPostmetaData($post_id) {
                         <div class="col-md-4 content_img">
                             <a href="<?=get_site_url()?>/projects/<?=$row->post_name?>">
                                 <img src="<?=wp_get_attachment_image_url($postmeta['cover'])?>" alt="Project Cover">
-                                <div>
-                                    <span><?=$row->post_title?></span>
+                                <div class="content_wrap">
+                                    <h6><?=$row->post_title?></h6>
                                 </div>
                             </a>
                         </div>
