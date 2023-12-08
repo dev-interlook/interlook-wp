@@ -78,11 +78,18 @@ function getPostmetaData($post_id) {
 
     /* Parent Container for Image Hover */
     .content_img {
-        padding: 0px 2px 2px 2px;
+        /* padding: 0px 10px 10px 0px; */
+        margin-bottom: 10px;
     }
     @media screen and (max-width: 768px) {
         .content_img {
-            padding: 0px 30px 2px 30px;
+            /* padding: 0px 15px 15px 0px; */
+            margin-bottom: 15px;
+        }
+    }
+    @media screen and (max-width: 480px) {
+        .content_img {
+            padding: 0px 15px 15px 15px;
         }
     }
 
@@ -121,6 +128,47 @@ function getPostmetaData($post_id) {
         margin: 0 0 20px 20px;
         align-self: flex-end;
     }
+
+
+    .left_side {
+        width: 25%;
+        float: left;
+        z-index: 100;
+    }
+    .nav_category {
+        height: 70vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .nav_category a {
+        width: 100%;
+    }
+
+    .right_side {
+        width: 75%;
+        height: 77vh;
+        overflow-y: scroll;
+        margin-left: 30%;
+    }
+
+    @media screen and (max-width: 480px) {
+        .left_side {
+            width: 100%;
+            float: left;
+            min-height: 10vh;
+            padding: 0px 15px 15px 15px;
+        }
+        .nav_category {
+            height: auto;
+        }
+
+        .right_side {
+            width: 100%;
+            margin-left: 0;
+            height: auto;
+            overflow-y: auto;
+        }
+    }
 </style>
 
 <!-- Content -->
@@ -131,22 +179,17 @@ function getPostmetaData($post_id) {
             <div class="content-lines"></div>
         </div>
     </section>
-    <!-- Header Banner -->
-    <?php $bg_image = get_field( 'bg-image' ); ?>
-    <?php if ( $bg_image ) { ?>
-    <!-- <section class="banner-header banner-img valign bg-img bg-fixed" data-overlay-darkgray="5" data-background="<?php echo $bg_image['url']; ?>"> -->
-    <?php } ?>
-    <!-- </section> -->
+    
     <!-- Project Page -->
-    <section class="section-padding2 mt-80">
+    <section class="section-padding2 mt-50">
         <div class="container">
             <br><br>
-            <div class="row">
-                <div class="col-md-3 pb-15">
-                    <div class="col-md-12">
-                        <h2 class="section-title2">Our Project</h2>
-                    </div>
-                    <div class="col-md-12">
+            <div class="left_side">
+                <div>
+                    <h2 class="section-title2">Our Project</h2>
+                </div>
+                <div class="nav_category">
+                    <div style="margin-top: auto;">
                     <?php
                     if (is_array($category_results) && count($category_results)) :
                         foreach ($category_results as $row) :
@@ -158,124 +201,36 @@ function getPostmetaData($post_id) {
                             <span><?=$row->name?></span>
                             <?php endif; ?>
                         </a>
-                        <br>
                     <?php
                         endforeach;
                     endif;
                     ?>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-md-9">
-                    <div class="row">
-                    <?php
-                    if (is_array($project_results) && count($project_results)) :
-                        foreach ($project_results as $row) :
-                            $postmeta = getPostmetaData($row->ID);
-                    ?>
-                        <div class="col-md-4 content_img">
-                            <a href="<?=get_site_url()?>/projects/<?=$row->post_name?>">
-                                <img src="<?=wp_get_attachment_image_url($postmeta['cover'])?>" alt="Project Cover">
-                                <div class="content_wrap">
-                                    <h6><?=$row->post_title?></h6>
-                                </div>
-                            </a>
-                        </div>
-                    <?php
-                        endforeach;
-                    endif;
-                    ?>
+            <div class="right_side">
+                <div class="row" style="margin: 0px 0px 0px 0px;">
+                <?php
+                if (is_array($project_results) && count($project_results)) :
+                    foreach ($project_results as $row) :
+                        $postmeta = getPostmetaData($row->ID);
+                ?>
+                    <div class="col-md-6 col-lg-4 content_img">
+                        <a href="<?=get_site_url()?>/projects/<?=$row->post_name?>">
+                            <img src="<?=wp_get_attachment_image_url($postmeta['cover'])?>" alt="Project Cover">
+                            <div class="content_wrap">
+                                <h6><?=$row->post_title?></h6>
+                            </div>
+                        </a>
                     </div>
+                <?php
+                    endforeach;
+                endif;
+                ?>
                 </div>
             </div>
             <br><br>
-
-            <!-- <div class="row">
-                <div class="col-md-12">
-                    <h2 class="section-title2">Cotton House</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8">
-                    <p><?php the_field( 'description-paragraph01' ); ?></p>
-                    <p><?php the_field( 'description-paragraph02' ); ?></p>
-                </div>
-                <div class="col-md-4">
-                    <p><b>Year : </b> <?php the_field( 'year' ); ?></p>
-                    <p><b>Company : </b> <?php the_field( 'company' ); ?></p>
-                    <p><b>Project Name : </b> <?php the_field( 'project-name' ); ?></p>
-                    <p><b>Location : </b> <?php the_field( 'location' ); ?></p>
-                </div>
-            </div>
-            <div class="row mt-30">
-                <div class="col-md-6 gallery-item">
-                <?php $image_left_top = get_field( 'image-left-top' ); ?>
-                <?php if ( $image_left_top ) { ?>
-                    <a href="<?php echo $image_left_top['url']; ?>" title="Architecture" class="img-zoom">
-                    <?php } ?>
-                        <div class="gallery-box">
-                        <?php $image_left_top = get_field( 'image-left-top' ); ?>
-                        <?php if ( $image_left_top ) { ?>
-                            <div class="gallery-img"> <img src="<?php echo $image_left_top['url']; ?>" class="img-fluid mx-auto d-block" alt="work-img"> </div>
-                            <?php } ?>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 gallery-item">
-                <?php $image_right_top = get_field( 'image-right-top' ); ?>
-                <?php if ( $image_right_top ) { ?>
-                    <a href="<?php echo $image_right_top['url']; ?>" title="Architecture" class="img-zoom">
-                    <?php } ?>
-                        <div class="gallery-box">
-                        <?php $image_right_top = get_field( 'image-right-top' ); ?>
-                        <?php if ( $image_right_top ) { ?>
-                            <div class="gallery-img"> <img src="<?php echo $image_right_top['url']; ?>" class="img-fluid mx-auto d-block" alt="work-img"> </div>
-                            <?php } ?>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 gallery-item">
-                <?php $image_bottom_left = get_field( 'image-bottom-left' ); ?>
-                <?php if ( $image_bottom_left ) { ?>
-                    <a href="<?php echo $image_bottom_left['url']; ?>" title="Architecture" class="img-zoom">
-                    <?php } ?>
-                        <div class="gallery-box">
-                        <?php $image_bottom_left = get_field( 'image-bottom-left' ); ?>
-                        <?php if ( $image_bottom_left ) { ?>
-                            <div class="gallery-img"> <img src="<?php echo $image_bottom_left['url']; ?>" class="img-fluid mx-auto d-block" alt="work-img"> </div>
-                            <?php } ?>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-6 gallery-item">
-                <?php $image_bottom_right = get_field( 'image-bottom-right' ); ?>
-                <?php if ( $image_bottom_right ) { ?>
-                    <a href="<?php echo $image_bottom_right['url']; ?>" title="Architecture" class="img-zoom">
-                    <?php } ?>
-                        <div class="gallery-box">
-                        <?php $image_bottom_right = get_field( 'image-bottom-right' ); ?>
-                        <?php if ( $image_bottom_right ) { ?>
-                            <div class="gallery-img"> <img src="<?php echo $image_bottom_right['url']; ?>" class="img-fluid mx-auto d-block" alt="work-img"> </div>
-                            <?php } ?>
-                        </div>
-                    </a>
-                </div>
-            </div> -->
         </div>
     </section>
-    <!-- Prev-Next Projects -->
-    <!-- <section class="projects-prev-next">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="d-sm-flex align-items-center justify-content-between">
-                        <div class="projects-prev-next-left">
-                            <a href="<?php the_field( 'button-next' ); ?>"> <i class="ti-arrow-left"></i> Previous Project</a>
-                        </div> <a href="projects.html"><i class="ti-layout-grid3-alt"></i></a>
-                        <div class="projects-prev-next-right"> <a href="<?php the_field( 'button-next' ); ?>">Next Project <i class="ti-arrow-right"></i></a> </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 <?php get_footer();?>
