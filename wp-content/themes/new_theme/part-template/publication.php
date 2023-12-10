@@ -32,7 +32,7 @@ get_header();
 
     .container-publication {
         column-count: 4;
-        column-gap: 10px;
+        column-gap: 20px;
     }
     @media screen and (max-width: 480px) {
         .container-publication {
