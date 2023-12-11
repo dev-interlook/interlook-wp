@@ -110,7 +110,20 @@ get_header(); ?>
 
     .gallery-img-small > img {
         object-fit: cover;
-        height: 100px;
+        width: 150px;
+        height: 150px;
+    }
+    @media screen and (max-width: 1024px) {
+        .gallery-img-small > img {
+            width: auto;
+            height: 100px;
+        }
+    }
+    @media screen and (max-width: 480px) {
+        .gallery-img-small > img {
+            width: auto;
+            height: 50px;
+        }
     }
 </style>
 
