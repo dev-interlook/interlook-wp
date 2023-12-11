@@ -113,7 +113,7 @@ get_header(); ?>
         width: 150px;
         height: 150px;
     }
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 960px) {
         .gallery-img-small > img {
             width: auto;
             height: 100px;
