@@ -79,7 +79,7 @@ get_header();
 <!-- Content -->
 <div class="content-wrapper">
 
-    <!-- Project Page -->
+    <!-- Publication Page -->
     <section class="section-padding2 mt-80">
         <div class="container">
             <h2 class="section-title2">Publication</h2>
