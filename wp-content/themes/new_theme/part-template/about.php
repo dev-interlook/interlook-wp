@@ -52,6 +52,9 @@ get_header();
         .banner-header {
             margin-top: 40px;
         }
+        .banner-header h1 {
+            font-size: 25px;
+        }
     }
 
     .section-1 {
