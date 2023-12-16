@@ -51,7 +51,7 @@ get_header(); ?>
 
   <script>
     function redirectToEndpoint() {
-        window.location.href = '/interlook-wp/booking-success';
+        window.location.href = '/booking-success';
     }
 
     const responseElement = document.getElementsByClassName('wpcf7-response-output')[0];
