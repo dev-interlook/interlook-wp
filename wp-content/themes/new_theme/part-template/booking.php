@@ -42,9 +42,34 @@ get_header(); ?>
 					<div class="col-md-12">
             <br><br><br>
             <?php echo do_shortcode('[contact-form-7 id="576" title="Booking"]'); ?>
+            <?php #echo do_shortcode('[contact-form-7 id="780" title="Bookingg"]'); ?>
 				  </div>
         </div>
       </section>
   <?php endwhile; ?>
   <?php endif; ?>
-      <?php get_footer();?>
+
+  <script>
+    function redirectToEndpoint() {
+        window.location.href = '/interlook-wp/booking-success';
+    }
+
+    const responseElement = document.getElementsByClassName('wpcf7-response-output')[0];
+
+    const observer = new MutationObserver(function(mutationsList) {
+      if (responseElement.innerHTML == 'Thank you for your message. It has been sent.')
+      {
+        redirectToEndpoint();
+      }
+    });
+
+    const observerConfig = { attributes: true, childList: true, subtree: true };
+
+    if (responseElement) {
+        observer.observe(responseElement, observerConfig);
+    } else {
+        console.error('Element not found.');
+    }
+  </script>
+
+<?php get_footer();?>
