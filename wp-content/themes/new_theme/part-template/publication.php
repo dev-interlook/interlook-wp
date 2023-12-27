@@ -36,7 +36,7 @@ get_header();
     }
     @media screen and (max-width: 480px) {
         .container-publication {
-            column-count: 1;
+            column-count: 2;
         }
     }
 
