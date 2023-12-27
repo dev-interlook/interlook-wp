@@ -27,6 +27,15 @@
     <?php wp_head();?>
 
     <style>
+        .logo-nav {
+            position: absolute;
+        }
+        @media (max-width: 991px) {
+            .logo-nav {
+                position: relative;
+            }
+        }
+
         .table-borderless {
             border: none;
             border-collapse: unset;
@@ -110,7 +119,7 @@
     <nav class="navbar navbar-expand-lg">
         <div class="row" style="width: 100%; margin: 0;">
             <!-- Logo -->
-            <div class="col-lg-2 col-md-12">
+            <div class="col-lg-2 col-md-12 logo-nav">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="icon-bar"><i class="ti-line-double"></i></span>
                 </button>
@@ -122,7 +131,7 @@
             </div>
 
             <!-- Navbar links -->
-            <div class="col-lg-10 col-md-12 text-center" style="padding: 0;">
+            <div class="col-lg-12 col-md-12 text-center" style="padding: 0;">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
                         <?php if ( have_rows( 'menu', 'option' ) ) : ?>
