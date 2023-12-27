@@ -83,7 +83,7 @@ get_header();
         .image-divider > img {
             width: 100%;
             flex: 0 0 0;
-            height: 100px;
+            /* height: 100px; */
             object-fit: cover;
 
             padding: 0px 15px 15px 0px;
