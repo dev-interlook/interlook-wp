@@ -38,7 +38,8 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12 text-center">
-                                    <h1><?php the_sub_field( 'title' ); ?></h1>
+                                    <!-- <h1><?php the_sub_field( 'title' ); ?></h1> -->
+                                    <img class="monogram-logo-banner" src="<?php echo get_template_directory_uri(); ?>/img/interlook-logo.png" alt="Interlook Monogram Logo">
                                     <p><?php the_sub_field( 'description' ); ?></p>
                                 </div>
                             </div>

@@ -99,6 +99,16 @@
                 right: 25px;
             }
         }
+
+        .monogram-logo-banner {
+            width: 30% !important;
+            margin: auto;
+        }
+        @media (max-width: 480px) {
+            .monogram-logo-banner {
+                width: 50% !important;
+            }
+        }
     </style>
 </head>
 
