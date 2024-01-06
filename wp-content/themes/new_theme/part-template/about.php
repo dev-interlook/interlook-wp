@@ -121,6 +121,47 @@ get_header();
         float: left;
         margin: 15px 0px 15px 0px;
     }
+
+    /* Style for Team Slider */
+    .mySlides {display: none;}
+
+    /* Slideshow container */
+    .slideshow-container {
+        position: relative;
+        margin: auto;
+    }
+
+    .active {
+        background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+        animation-name: fade;
+        animation-duration: 4.5s;
+    }
+
+    @keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+    }
+    
+    @media screen and (max-width: 480px) {
+        .team-web-view {
+            display: none;
+        }
+        .team-mobile-view {
+            display: block;
+        }
+    }
+    @media screen and (min-width: 481px) {
+        .team-web-view {
+            display: block;
+        }
+        .team-mobile-view {
+            display: none;
+        }
+    }
 </style>
 
 <!-- Content -->
@@ -174,32 +215,85 @@ get_header();
         </div>
     </div>
 
-    <!-- Our Team -->
-    <div class="our-team mt-50">
-        <div class="row">
-            <h2 class="col-sm-12">Our Team</h2>
-    
-            <?php if ( have_rows( 'teams' ) ) : ?>
-                <?php while ( have_rows( 'teams' ) ) : the_row(); ?>
-                    <div class="col-md-4">
-                        <div class="team-image">
-                            <?php if ( get_sub_field( 'photo' ) ) { ?>
-                                <img src="<?php the_sub_field( 'photo' ); ?>" />
-                            <?php } ?>
+    <!-- Web View -->
+    <div class="team-web-view">
+        <!-- Our Team -->
+        <div class="our-team mt-50">
+            <div class="row">
+                <h2 class="col-sm-12">Our Team</h2>
+
+                <?php if ( have_rows( 'teams' ) ) : ?>
+                    <?php while ( have_rows( 'teams' ) ) : the_row(); ?>
+                        <div class="col-md-4">
+                            <div class="team-image">
+                                <?php if ( get_sub_field( 'photo' ) ) { ?>
+                                    <img src="<?php the_sub_field( 'photo' ); ?>" />
+                                <?php } ?>
+                            </div>
+                            <div class="team-name">
+                                <h5><?php the_sub_field( 'name' ); ?></h5>
+                                <small><?php the_sub_field( 'job_position' ); ?></small>
+                            </div>
+                            <div class="team-description">
+                                <h6><?php the_sub_field( 'summary' ); ?></h6>
+                            </div>
                         </div>
-                        <div class="team-name">
-                            <h5><?php the_sub_field( 'name' ); ?></h5>
-                            <small><?php the_sub_field( 'job_position' ); ?></small>
-                        </div>
-                        <div class="team-description">
-                            <h6><?php the_sub_field( 'summary' ); ?></h6>
-                        </div>
-                    </div>
-                <?php endwhile; ?>
-            <?php else : ?>
-                <?php // no rows found ?>
-            <?php endif; ?>
+                    <?php endwhile; ?>
+                <?php else : ?>
+                    <?php // no rows found ?>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 
+    <!-- Mobile View -->
+    <div class="team-mobile-view">
+        <!-- Our Team -->
+        <div class="our-team mt-50">
+            <div class="row">
+                <h2 class="col-sm-12">Our Team</h2>
+
+                <div class="slideshow-container">
+                    <?php if ( have_rows( 'teams' ) ) : ?>
+                        <?php while ( have_rows( 'teams' ) ) : the_row(); ?>
+                        <div class="mySlides fade">
+                            <div class="team-image">
+                                <?php if ( get_sub_field( 'photo' ) ) { ?>
+                                    <img src="<?php the_sub_field( 'photo' ); ?>" />
+                                <?php } ?>
+                            </div>
+                            <div class="team-name">
+                                <h5><?php the_sub_field( 'name' ); ?></h5>
+                                <small><?php the_sub_field( 'job_position' ); ?></small>
+                            </div>
+                            <div class="team-description">
+                                <h6><?php the_sub_field( 'summary' ); ?></h6>
+                            </div>
+                        </div>
+                        <?php endwhile; ?>
+                    <?php else : ?>
+                        <?php // no rows found ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 5000);
+    }
+</script>
 <?php get_footer();?>
