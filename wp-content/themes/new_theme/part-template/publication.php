@@ -80,7 +80,7 @@ get_header();
 <div class="content-wrapper">
 
     <!-- Publication Page -->
-    <section class="section-padding2 mt-80">
+    <section class="section-padding2 mt-100">
         <div class="container">
             <h2 class="section-title2">Publication</h2>
 
