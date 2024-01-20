@@ -30,15 +30,16 @@ get_header();
         font-weight: 600;
     }
 
-    .banner-header {
-        width: 100%;
-        height: auto;
-        position: relative;
+    .tagline-header {
+        height: 50vh;
+        margin-top: 90px;
     }
-    .banner-header > h1 {
+    .tagline-header > h1 {
+        font-size: 1.5rem;
+        text-align: center;
         margin: 0;
-        position: absolute;
-        top: 20%;
+        position: relative;
+        top: 50%;
         left: 50%;
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
@@ -47,6 +48,12 @@ get_header();
         color: black;
         filter: invert(1);
         mix-blend-mode: difference;
+    }
+
+    .banner-header {
+        width: 100%;
+        height: auto;
+        position: relative;
     }
     @media screen and (max-width: 480px) {
         .banner-header {
@@ -166,14 +173,15 @@ get_header();
 
 <!-- Content -->
 <div class="content-wrapper">
+    <div class="tagline-header">
+        <h1><?php the_field( 'tag_line' ); ?></h1>
+    </div>
 
     <!-- Banner Header -->
     <div class="banner-header">
         <?php if ( get_field( 'banner' ) ) { ?>
             <img src="<?php the_field( 'banner' ); ?>" />
         <?php } ?>
-        
-        <h1><?php the_field( 'tag_line' ); ?></h1>
     </div>
 
     <!-- Section 1 -->
