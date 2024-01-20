@@ -48,25 +48,37 @@
                 <table class="col-md-10 animate-box table-borderless" style="padding: 0;">
                     <tbody>
                         <tr>
-                            <td width="5%" style="font-size: 16pt;">a</td>
+                            <td width="5%" style="font-size: 16pt;">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/maps.png" alt="Working Address">
+                            </td>
                             <td colspan="3"><?php the_sub_field( 'address' ); ?></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td width="5%" style="font-size: 16pt;">p</td>
+                            <td width="5%" style="font-size: 16pt;">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/phone.png" alt="Working Phone">
+                            </td>
                             <td width="30%"><?php the_sub_field( 'phone' ); ?></td>
-                            <td width="5%" style="font-size: 16pt;">e</td>
+
+                            <td width="5%" style="font-size: 16pt;">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/email.png" alt="Working Email">
+                            </td>
                             <td width="30%"><?php the_sub_field( 'email' ); ?></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td width="5%" style="font-size: 16pt;">ig</td>
+                            <td width="5%" style="font-size: 16pt;">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/insta.png" alt="Instagram Account">
+                            </td>
                             <td width="30%">
                                 <a href="<?php the_sub_field( 'ig_link' ); ?>" target="_blank">
                                     <?php the_sub_field( 'ig_name' ); ?>
                                 </a>
                             </td>
-                            <td width="5%" style="font-size: 16pt;">w</td>
+
+                            <td width="5%" style="font-size: 16pt;">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/website.png" alt="Website Address">
+                            </td>
                             <td width="30%">
                                 <a href="<?php the_sub_field( 'website' ); ?>">
                                 <?php the_sub_field( 'website' ); ?>
