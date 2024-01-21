@@ -174,11 +174,11 @@ function getPostmetaData($post_id) {
 <!-- Content -->
 <div class="content-wrapper">
     <!-- Lines -->
-    <section class="content-lines-wrapper">
+    <!-- <section class="content-lines-wrapper">
         <div class="content-lines-inner">
             <div class="content-lines"></div>
         </div>
-    </section>
+    </section> -->
     
     <!-- Project Page -->
     <section class="section-padding2 mt-50">
