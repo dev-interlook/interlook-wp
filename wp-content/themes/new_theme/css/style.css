@@ -2988,6 +2988,10 @@ button.mfp-arrow {
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999999;
+
+    /* trying to fix outline buttom & right problem */
+    outline: none;
+    clip-path: inset(1px 1px);
 }
 #bumper:after,
 #bumper:before {
