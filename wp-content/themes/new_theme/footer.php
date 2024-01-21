@@ -1,6 +1,6 @@
 <!-- Footer -->
 <footer class="main-footer dark" style="background-color: #000;">
-    <div style="margin: 0px 0px 0px 30px;">
+    <div style="margin: 0px 0px 0px 4%;">
         <div class="row">
             <div class="col-md-4 mb-20">
                 <div class="col-md-12" style="padding: 0;">
