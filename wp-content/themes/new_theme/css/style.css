@@ -378,7 +378,8 @@ input[type="checkbox"] {
     margin-bottom: 20px;
 }
 .section-sub-title span {
-    color: #F28300;
+    /* color: #F28300; */
+    color: #000000;
 }
 
 
@@ -1378,7 +1379,8 @@ hr {
 .projects .item .con h6,
 .projects .item .con h6 a {
     position: relative;
-    color: #F28300;
+    /* color: #F28300; */
+    color: #ffffff;
     font-size: 13px;
     font-weight: 400;
     margin-top: 0px;
