@@ -48,8 +48,9 @@ get_header();
 
         /* invert the color if it is in the same color */
         color: black;
-        filter: invert(1);
-        mix-blend-mode: difference;
+        /* filter: invert(1); */
+        /* mix-blend-mode: difference; */
+        text-shadow: 0 0 10px white;
     }
     @media screen and (max-width: 480px) {
         .banner-header {
