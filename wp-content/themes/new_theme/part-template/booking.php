@@ -28,7 +28,10 @@ get_header(); ?>
         </div>
     </section>
     <!-- Header Banner -->
-    <section class="banner-header banner-img valign bg-img bg-fixed" data-overlay-darkgray="5" data-background="<?php the_sub_field( 'background' ); ?>"></section>
+    <section class="banner-header banner-img valign bg-img bg-fixed"
+      style="background-position: center;"
+      data-overlay-darkgray="5"
+      data-background="<?php the_sub_field( 'background' ); ?>"></section>
       <!-- Blog  -->
     <section class="bauen-blog3 section-padding2">
 			<div class="container">

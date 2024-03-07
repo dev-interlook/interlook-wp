@@ -27,7 +27,10 @@
     <?php if ( have_rows( 'banner' ) ) : ?>
         <?php while ( have_rows( 'banner' ) ) : the_row(); ?>
             <!-- Header Banner -->
-        <section class="banner-header banner-img valign bg-img bg-fixed" data-overlay-darkgray="5" data-background="<?php the_sub_field( 'background' ); ?>"></section>
+        <section class="banner-header banner-img valign bg-img bg-fixed"
+            style="background-position: center;"
+            data-overlay-darkgray="5" 
+            data-background="<?php the_sub_field( 'background' ); ?>"></section>
         <?php endwhile; ?>
     <?php endif; ?>
     <!-- Contact -->
