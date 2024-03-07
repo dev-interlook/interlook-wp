@@ -70,7 +70,7 @@
                             <div class="col-md-4 col-sm-12 px-5 py-2">
                                 <h2 class="section-title"><?php the_sub_field( 'title' ); ?></h2>
                             </div>
-                            <div class="col-md-8 col-sm-12 px-5 py-2" style="text-align: justify; margin-left: -5px;">
+                            <div class="col-md-8 col-sm-12 px-5 py-2" style="text-align: left; margin-left: -5px;">
                                 <?php the_sub_field( 'description' ); ?>
                             </div>
                         </div>
