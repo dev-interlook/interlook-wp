@@ -80,6 +80,7 @@ get_header();
         width: 33.333333%;
         list-style: none;
         flex: 0 0 33.333333%;
+        object-fit: cover;
 
         padding-right: 15px;
     }
