@@ -17,10 +17,6 @@ get_header();
 ?>
 
 <style>
-    .navbar {
-        background: #000;
-    }
-
     .section-padding2 {
         min-height: 90vh;
     }
