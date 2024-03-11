@@ -2721,8 +2721,15 @@ button.mfp-arrow {
     height: 550px;
 }
 .contact-icon {
-    width: 30px !important;
-    height: 30px !important;
+    text-align: end;
+    max-width: 50px !important;
+    max-height: 50px !important;
+    min-width: 35px !important;
+    min-height: 35px !important;
+}
+.contact-icon > img {
+    width: 35px !important;
+    height: 35px !important;
 }
 
 

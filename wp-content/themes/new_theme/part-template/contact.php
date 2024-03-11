@@ -51,49 +51,46 @@
                 <table class="col-md-10 animate-box table-borderless" style="padding: 0;">
                     <tbody>
                         <tr>
-                            <td>
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/maps.png" alt="Working Address" class="contact-icon">
+                            <td class="contact-icon">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/maps.png" alt="Working Address">
                             </td>
                             <td colspan="3">
                                 <?php the_sub_field( 'address' ); ?>
                             </td>
-                            <td></td>
                         </tr>
                         <tr>
-                            <td>
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/phone.png" alt="Working Phone" class="contact-icon">
+                            <td class="contact-icon">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/phone.png" alt="Working Phone">
                             </td>
-                            <td width="50%">
+                            <td>
                                 <?php the_sub_field( 'phone' ); ?>
                             </td>
 
-                            <td>
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/email.png" alt="Working Email" class="contact-icon">
+                            <td class="contact-icon">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/email.png" alt="Working Email">
                             </td>
-                            <td width="40%">
+                            <td>
                                 <?php the_sub_field( 'email' ); ?>
                             </td>
-                            <td></td>
                         </tr>
                         <tr>
-                            <td>
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/insta.png" alt="Instagram Account" class="contact-icon">
+                            <td class="contact-icon">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/insta.png" alt="Instagram Account">
                             </td>
-                            <td width="50%">
+                            <td>
                                 <a href="<?php the_sub_field( 'ig_link' ); ?>" target="_blank">
                                     <?php the_sub_field( 'ig_name' ); ?>
                                 </a>
                             </td>
 
-                            <td>
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/website.png" alt="Website Address" class="contact-icon">
+                            <td class="contact-icon">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/website.png" alt="Website Address">
                             </td>
-                            <td width="40%">
+                            <td>
                                 <a href="<?php the_sub_field( 'website' ); ?>">
                                     <?php the_sub_field( 'website' ); ?>
                                 </a>
                             </td>
-                            <td></td>
                         </tr>
                     </tbody>
                 </table>
