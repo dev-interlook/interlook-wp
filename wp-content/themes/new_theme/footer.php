@@ -8,7 +8,7 @@
                 </div>
                 <div class="col-md-12 display-only-desktop" style="position: absolute; bottom: 0; left: 0;">
                     <div class="text-left">
-                        <p style="color: black;">
+                        <p style="color: black; font-size: 15px;">
                             Copyright © <?php echo date("Y"); ?>. Interlook. <?php the_field( 'copyright', 'option' ); ?>.
                         </p>
                     </div>
@@ -61,7 +61,9 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="text-left">
-                        <p>Copyright © <?php echo date("Y"); ?>. Interlook. <?php the_field( 'copyright', 'option' ); ?>.</p>
+                        <p style="color: black;">
+                            Copyright © <?php echo date("Y"); ?>. Interlook. <?php the_field( 'copyright', 'option' ); ?>.
+                        </p>
                     </div>
                 </div>
                 <!-- <div class="col-md-4 abot">
