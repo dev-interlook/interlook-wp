@@ -51,40 +51,46 @@
                 <table class="col-md-10 animate-box table-borderless" style="padding: 0;">
                     <tbody>
                         <tr>
-                            <td width="5%" style="font-size: 16pt;">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/maps.png" alt="Working Address">
+                            <td>
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/maps.png" alt="Working Address" class="contact-icon">
                             </td>
-                            <td colspan="3"><?php the_sub_field( 'address' ); ?></td>
+                            <td colspan="3">
+                                <?php the_sub_field( 'address' ); ?>
+                            </td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td width="5%" style="font-size: 16pt;">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/phone.png" alt="Working Phone">
+                            <td>
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/phone.png" alt="Working Phone" class="contact-icon">
                             </td>
-                            <td width="30%"><?php the_sub_field( 'phone' ); ?></td>
+                            <td width="50%">
+                                <?php the_sub_field( 'phone' ); ?>
+                            </td>
 
-                            <td width="5%" style="font-size: 16pt;">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/email.png" alt="Working Email">
+                            <td>
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/email.png" alt="Working Email" class="contact-icon">
                             </td>
-                            <td width="30%"><?php the_sub_field( 'email' ); ?></td>
+                            <td width="40%">
+                                <?php the_sub_field( 'email' ); ?>
+                            </td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td width="5%" style="font-size: 16pt;">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/insta.png" alt="Instagram Account">
+                            <td>
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/insta.png" alt="Instagram Account" class="contact-icon">
                             </td>
-                            <td width="30%">
+                            <td width="50%">
                                 <a href="<?php the_sub_field( 'ig_link' ); ?>" target="_blank">
                                     <?php the_sub_field( 'ig_name' ); ?>
                                 </a>
                             </td>
 
-                            <td width="5%" style="font-size: 16pt;">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/website.png" alt="Website Address">
+                            <td>
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/website.png" alt="Website Address" class="contact-icon">
                             </td>
-                            <td width="30%">
+                            <td width="40%">
                                 <a href="<?php the_sub_field( 'website' ); ?>">
-                                <?php the_sub_field( 'website' ); ?>
+                                    <?php the_sub_field( 'website' ); ?>
                                 </a>
                             </td>
                             <td></td>
