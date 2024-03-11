@@ -184,16 +184,16 @@ button {
     transition: background-color .15s ease-out;
     background: white !important;
     color: black !important;
-    border: 1px solid black;
+    border: 1px solid #000 !important;
 }
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover,
 button:hover {
     font-family: 'DM Sans', sans-serif !important;
-    background-color: #323232 !important;
+    background-color: #fff !important;
     color: white !important;
-    border: 1px solid black;
+    border: 1px solid #000;
 }
 select {
     padding: 10px;
@@ -389,7 +389,7 @@ input[type="checkbox"] {
     left: 0;
     top: 0;
     width: 100%;
-    background: transparent;
+    background: #ffffffee;
     z-index: 99;
     padding-right: 0;
     padding-left: 0;
@@ -398,14 +398,14 @@ input[type="checkbox"] {
     height: 90px;
 }
 .navbar .icon-bar {
-    color: #F28300;
+    color: #000;
 }
 .navbar .navbar-nav .nav-link {
     /* font-family: 'Oswald', sans-serif; */
     font-family: 'DM Sans';
     font-size: 15px;
     font-weight: 300;
-    color: #fff;
+    color: #000;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 5px 5px;
@@ -413,7 +413,7 @@ input[type="checkbox"] {
     transition: all .4s;
 }
 .navbar .navbar-nav .nav-link.black-color {
-    color: #fff;
+    color: #000;
 }
 .navbar .navbar-nav .nav-link:hover {
     color: #F28300;
@@ -422,7 +422,7 @@ input[type="checkbox"] {
     color: #F28300 !important;
 }
 .nav-scroll {
-    background: #000;
+    background: #ffffffee;
     padding: 0 0 0 0;
     position: fixed;
     top: -100px;
@@ -441,7 +441,7 @@ input[type="checkbox"] {
     color: #F28300;
 }
 .nav-scroll .navbar-nav .nav-link {
-    color: #fff;
+    color: #000;
 }
 .nav-scroll .navbar-nav .active {
     color: #F28300 !important;
@@ -485,11 +485,11 @@ input[type="checkbox"] {
 }
 .nav-scroll .logo-wrapper {
     padding: 15px 70px 15px 150px;
-    background: #272727;
+    background: #ffffffee;
 }
 .logo-wrapper {
     float: left;
-    background: #272727;
+    background: #ffffffee;
     padding: 30px 50px;
 }
 .logo-wrapper .logo h2 {
@@ -666,12 +666,12 @@ input[type="checkbox"] {
     .navbar {
         padding-left: 0px;
         padding-right: 0px;
-        background: #272727;
+        background: #ffffffee;
         padding-top: 15px;
         padding-bottom: 15px;
     }
     .nav-scroll {
-        background: #272727;
+        background: #ffffffee;
     }
     .logo-wrapper {
         float: left;
@@ -679,7 +679,7 @@ input[type="checkbox"] {
     }
     .nav-scroll .logo-wrapper {
         padding: 15px;
-        background-color: #272727;
+        background-color: #ffffffee;
     }
 }
 
@@ -2828,11 +2828,11 @@ button.mfp-arrow {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 .main-footer.dark {
-    background: #272727;
-    color: #fff;
+    background: #ffffffee;
+    color: #000;
 }
 .main-footer .abot p {
-    color: #fff;
+    color: #000;
 }
 .main-footer .abot .social-icon {
     text-align: center;
@@ -2845,7 +2845,7 @@ button.mfp-arrow {
     text-align: center;
     font-size: 16pt;
     border: 1px solid #373737;
-    color: #999;
+    color: #000;
     border-radius: 100%;
     margin-right: 3px;
     -webkit-transition: all .4s;
@@ -2853,14 +2853,14 @@ button.mfp-arrow {
     transition: all .4s;
 }
 .main-footer .abot .social-icon a:hover {
-    border: 1px solid #F28300;
+    border: 1px solid #373737;
     background: transparent;
-    color: #F28300;
+    color: #373737;
 }
 .main-footer .fothead h6 {
     margin-bottom: 0px;
     font-family: 'Oswald', sans-serif;
-    color: #F28300;
+    color: #000;
     font-size: 17px;
 }
 .main-footer .fotcont .fothead h6 {
@@ -3676,7 +3676,7 @@ button.mfp-arrow {
     .navbar .navbar-collapse {
         max-height: 360px;
         overflow: auto;
-        background: #272727;
+        background: #ffffffee;
         text-align: left;
         padding: 15px 30px 30px 15px
     }
@@ -3684,10 +3684,10 @@ button.mfp-arrow {
         margin: 0px auto !important;
     }
     .navbar .navbar-nav .nav-link {
-        color: #999;
+        color: #000;
     }
     .nav-scroll .navbar-collapse .nav-link {
-        color: #999 !important;
+        color: #000 !important;
     }
     .nav-scroll .navbar-collapse .active {
         color: #F28300 !important;

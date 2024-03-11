@@ -1,14 +1,14 @@
 <!-- Footer -->
-<footer class="main-footer dark" style="background-color: #000;">
+<footer class="main-footer dark">
     <div style="margin: 0px 0px 0px 4%;">
         <div class="row">
             <div class="col-md-4 mb-20">
                 <div class="col-md-12" style="padding: 0;">
-                    <img class="monogram-logo-width" src="<?php echo get_template_directory_uri(); ?>/img/interlook-logo.png" alt="Interlook Monogram Logo">
+                    <img class="monogram-logo-width" src="<?php echo get_template_directory_uri(); ?>/img/interlook-logo-black.png" alt="Interlook Monogram Logo">
                 </div>
                 <div class="col-md-12 display-only-desktop" style="position: absolute; bottom: 0; left: 0;">
                     <div class="text-left">
-                        <p style="color: white;">
+                        <p style="color: black;">
                             Copyright © <?php echo date("Y"); ?>. Interlook. <?php the_field( 'copyright', 'option' ); ?>.
                         </p>
                     </div>
@@ -25,11 +25,11 @@
                         <div class="item fotcont col-md-6 mb-20">
                         <?php endif; ?>
                             <div class="fothead">
-                                <h6 style="color: white; text-transform: uppercase; font-weight: 700;">
+                                <h6 style="color: black; text-transform: uppercase; font-weight: 700;">
                                     <?php the_sub_field( 'title' ); ?>
                                 </h6>
                             </div>
-                            <p class="p-light" style="color: white;"><?php the_sub_field( 'contnent' ); ?></p>
+                            <p class="p-light" style="color: black;"><?php the_sub_field( 'contnent' ); ?></p>
                         </div>
                     <?php endwhile; ?>
                     </div>
