@@ -79,13 +79,11 @@ function getPostmetaData($post_id) {
 
     /* Parent Container for Image Hover */
     .content_img {
-        /* padding: 0px 10px 10px 0px; */
-        margin-bottom: 10px;
+        margin-bottom: 30px;
     }
     @media screen and (max-width: 768px) {
         .content_img {
-            /* padding: 0px 15px 15px 0px; */
-            margin-bottom: 15px;
+            margin-bottom: 30px;
         }
     }
     @media screen and (max-width: 480px) {
