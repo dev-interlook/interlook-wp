@@ -72,6 +72,11 @@ function getPostmetaData($post_id) {
         font-weight: 600;
     }
 
+    .force-fit-img {
+        width: inherit;
+        height: inherit;
+    }
+
     /* Parent Container for Image Hover */
     .content_img {
         /* padding: 0px 10px 10px 0px; */
@@ -91,12 +96,12 @@ function getPostmetaData($post_id) {
 
     /* Child Text Container */
     .content_img div {
-        width: 100%;
-        height: 100%;
+        width: auto;
+        height: fit-content;
         position: absolute;
         bottom: 0;
-        right: 0;
-        left: 0;
+        right: 15px;
+        left: 15px;
         background: black;
         color: white;
         font-family: sans-serif;
@@ -112,7 +117,7 @@ function getPostmetaData($post_id) {
     }
 
     .content_img:hover div{
-        padding: 8px 15px;
+        padding-top: 15px;
         visibility: visible;
         opacity: 0.7;
     }
@@ -213,7 +218,7 @@ function getPostmetaData($post_id) {
                         $postmeta = getPostmetaData($row->ID);
                 ?>
                     <div class="col-md-6 col-lg-4 content_img">
-                        <a href="<?=get_site_url()?>/projects/<?=$row->post_name?>">
+                        <a href="<?=get_site_url()?>/projects/<?=$row->post_name?>" class="force-fit-img">
                             <img src="<?=wp_get_attachment_image_url($postmeta['cover'])?>" alt="Project Cover">
                             <div class="content_wrap">
                                 <h6><?=$row->post_title?></h6>
