@@ -16,18 +16,33 @@ global $wpdb;
 $current_url = explode('?',$_SERVER['REQUEST_URI'])[0];
 
 // Category Project
-$category_query = "
+# Project Built
+$category_built = "
     SELECT t.* FROM wp0k_terms t
     JOIN wp0k_term_taxonomy tt ON tt.term_id = t.term_id
     WHERE tt.parent IN (
         SELECT sub_t.term_id FROM wp0k_terms sub_t
         WHERE sub_t.slug = 'project'
     )
+    ORDER BY t.name ASC
 ";
-$category_results = $wpdb->get_results($category_query);
+$cat_built_results = $wpdb->get_results($category_built);
+
+# Design Project
+$category_design = "
+    SELECT t.* FROM wp0k_terms t
+    JOIN wp0k_term_taxonomy tt ON tt.term_id = t.term_id
+    WHERE tt.parent IN (
+        SELECT sub_t.term_id FROM wp0k_terms sub_t
+        WHERE sub_t.slug = 'design-project'
+    )
+    ORDER BY t.name ASC
+";
+$cat_design_results = $wpdb->get_results($category_design);
 
 // List Project
-$selected_category = count($category_results) ? $category_results[0]->term_id : 0;
+$selected_category = count($cat_built_results) ? $cat_built_results[0]->term_id : 0;
+$selected_category = ($selected_category == 0 && count($cat_design_results)) ? $cat_design_results[0]->term_id : 0;
 if (isset($_GET['c'])) {
     $selected_category = $_GET['c'];
 }
@@ -135,12 +150,15 @@ function getPostmetaData($post_id) {
         z-index: 100;
     }
     .nav_category {
-        height: 70vh;
+        height: 35vh;
         display: flex;
         flex-direction: column;
+        overflow-y: scroll;
+        padding-bottom: 15px;
     }
     .nav_category a {
         width: 100%;
+        padding-left: 15px;
     }
 
     .right_side {
@@ -187,11 +205,37 @@ function getPostmetaData($post_id) {
                 <div>
                     <h2 class="section-title2">Our Project</h2>
                 </div>
+                <!-- Project Built -->
                 <div class="nav_category">
-                    <div style="margin-top: auto;">
+                    <h6 style="margin-bottom: 5px;">Project Built</h4>
+
+                    <div>
                     <?php
-                    if (is_array($category_results) && count($category_results)) :
-                        foreach ($category_results as $row) :
+                    if (is_array($cat_built_results) && count($cat_built_results)) :
+                        foreach ($cat_built_results as $row) :
+                    ?>
+                        <a href="<?=$current_url?>?c=<?=$row->term_id?>">
+                            <?php if ($selected_category == $row->term_id) : ?>
+                            <span style="color: #1e73be; text-decoration: underline;"><?=$row->name?></span>
+                            <?php else : ?>
+                            <span><?=$row->name?></span>
+                            <?php endif; ?>
+                        </a>
+                    <?php
+                        endforeach;
+                    endif;
+                    ?>
+                    </div>
+                </div>
+                <hr style="border-top: 1px black solid; margin-bottom: 15px;">
+                <!-- Design Project -->
+                <div class="nav_category">
+                    <h6 style="margin-bottom: 5px;">Design Project</h4>
+
+                    <div>
+                    <?php
+                    if (is_array($cat_design_results) && count($cat_design_results)) :
+                        foreach ($cat_design_results as $row) :
                     ?>
                         <a href="<?=$current_url?>?c=<?=$row->term_id?>">
                             <?php if ($selected_category == $row->term_id) : ?>
