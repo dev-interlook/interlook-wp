@@ -42,7 +42,7 @@ $cat_design_results = $wpdb->get_results($category_design);
 
 // List Project
 $selected_category = count($cat_built_results) ? $cat_built_results[0]->term_id : 0;
-$selected_category = ($selected_category == 0 && count($cat_design_results)) ? $cat_design_results[0]->term_id : 0;
+$selected_category = ($selected_category == 0 && count($cat_design_results)) ? $cat_design_results[0]->term_id : $selected_category;
 if (isset($_GET['c'])) {
     $selected_category = $_GET['c'];
 }
