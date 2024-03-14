@@ -2062,8 +2062,8 @@ hr {
 }
 button.mfp-close,
 button.mfp-arrow {
-    border: 0px solid transparent;
-    background: transparent;
+    border: 0px solid transparent !important;
+    background: transparent !important;
 }
 
 

@@ -121,6 +121,18 @@ get_header(); ?>
             height: 50px;
         }
     }
+
+    /* Class for mfp zoom plugin */
+    .mfp-title-exclusive {
+        text-align: left;
+        font-size: 20px;
+        line-height: 18px;
+        color: #F3F3F3;
+        word-wrap: break-word;
+        padding-right: 36px;
+        position: absolute;
+        margin-top: 15px;
+    }
 </style>
 
 <!-- Counting gallery item -->
@@ -239,10 +251,19 @@ $moreImg = $totalImg - 6;
             </div>
             <div class="vc_row wpb_row vc_inner vc_row-fluid mt-30">
                 <div class="wpb_column vc_column_container vc_col-sm-6">
-                    <div class="vc_column-inner">
-                    </div>
+                    <div class="vc_column-inner"></div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
 <?php get_footer();?>
+
+<script>
+    $("body").on('DOMSubtreeModified', function(){
+        if ($(".mfp-title").text() == '') {
+            $(".mfp-title").text("© Interlook")
+            $("figure").prepend("<div class='mfp-title-exclusive'><?=the_title()?></div>")
+        }
+    });
+</script>
