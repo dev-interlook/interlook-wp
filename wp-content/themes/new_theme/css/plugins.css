@@ -19,7 +19,7 @@
 @import url("plugins/helper.css");
 
 /* == magnific-popup gallery  == */
-@import url("plugins/magnific-popup.css");
+@import url("plugins/magnific-popup.css?v=1");
 
 /* == YouTubePopUp == */
 @import url("plugins/YouTubePopUp.css");
