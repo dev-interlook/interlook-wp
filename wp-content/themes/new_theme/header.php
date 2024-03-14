@@ -14,7 +14,7 @@
 
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.png" />
 
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/plugins.css?v=1"  />
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/plugins.css?v=timestamp"  />
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM Sans">
