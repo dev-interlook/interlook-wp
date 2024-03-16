@@ -131,8 +131,9 @@ get_header();
         margin: 15px 0;
     }
     .our-team .team-summary {
-        position: absolute;
-        bottom: 0;
+        /* position: absolute;
+        bottom: 0; */
+        font-size: 14px;
         margin: 0;
         padding: 0;
     }
@@ -263,7 +264,7 @@ get_header();
     <div class="team-web-view">
         <!-- Our Team -->
         <div class="our-team">
-            <div class="row">
+            <div class="row" style="justify-content: center;">
                 <h2 class="col-sm-12 mb-50">meet the team</h2>
 
                 <!-- CEO -->
@@ -295,7 +296,7 @@ get_header();
                                     <?php if ( get_sub_field( 'photo' ) ) { ?>
                                         <img src="<?php the_sub_field( 'photo' ); ?>" />
                                     <?php } ?>
-                                    <h6 class="team-position"><b><?php the_sub_field( 'job_position' ); ?></b></h6>
+                                    <h6 class="team-position"><?php the_sub_field( 'job_position' ); ?></h6>
                                     <p class="team-name"><?php the_sub_field( 'name' ); ?></p>
                                 </div>
                             </div>
