@@ -17,6 +17,10 @@ get_header();
 ?>
 
 <style>
+    b {
+        font-weight: bolder;
+    }
+
     .section-padding2 {
         min-height: 90vh;
     }
@@ -44,6 +48,12 @@ get_header();
         color: black;
         filter: invert(1);
         mix-blend-mode: difference;
+    }
+    @media screen and (min-width: 1280px) {
+        .tagline-header > h1 {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+        }
     }
 
     .banner-header {
@@ -112,18 +122,47 @@ get_header();
         margin: 0;
     }
     .our-team .team-image {
-        width: 40%;
-        float: left;
+        width: 80%;
+    }
+    .our-team .ceo-position {
+        margin: 0;
     }
     .our-team .team-name {
-        width: 50%;
-        float: left;
-        margin-left: 10%;
+        margin: 15px 0;
     }
-    .our-team .team-description {
-        width: 100%;
-        float: left;
-        margin: 15px 0px 15px 0px;
+    .our-team .team-summary {
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .our-team .team-leaders {
+        margin: 100px 0;
+    }
+    .team-leaders .team-position {
+        margin: 15px 0;
+    }
+    .team-leaders .team-name {
+        margin: 5px 0;
+    }
+    @media screen and (max-width: 480px) {
+        .our-team .ceo-position {
+            margin: 15px 0 0;
+        }
+        .our-team .team-name {
+            margin: 10px 0;
+        }
+        .our-team .team-summary {
+            position: unset;
+        }
+
+        .our-team .team-leaders {
+            margin: 50px 0;
+        }
+        .team-leaders .team-name {
+            margin: 0;
+        }
     }
 
     /* Style for Team Slider */
@@ -150,7 +189,7 @@ get_header();
         to {opacity: 1}
     }
     
-    @media screen and (max-width: 480px) {
+    /* @media screen and (max-width: 480px) {
         .team-web-view {
             display: none;
         }
@@ -165,7 +204,7 @@ get_header();
         .team-mobile-view {
             display: none;
         }
-    }
+    } */
 </style>
 
 <!-- Content -->
@@ -182,10 +221,10 @@ get_header();
     </div>
 
     <!-- Section 1 -->
-    <div class="section-1 mt-50 row">
-        <h2 class="col-md-6">
+    <div class="section-1 mt-100 mb-100 row">
+        <h3 class="col-md-6">
             <?php the_field( 'section_1_title' ); ?>
-        </h2>
+        </h3>
 
         <div class="col-md-6">
             <h6><?php the_field( 'section_1_description' ); ?></h6>
@@ -193,7 +232,7 @@ get_header();
     </div>
     
     <!-- Image Divider -->
-    <div class="image-divider mt-50">
+    <div class="image-divider">
         <?php if ( have_rows( 'image_separator' ) ) : ?>
             <?php while ( have_rows( 'image_separator' ) ) : the_row(); ?>
                 <?php if ( get_sub_field( 'image_1' ) ) { ?>
@@ -210,10 +249,10 @@ get_header();
     </div>
 
     <!-- Section 2 -->
-    <div class="section-2 mt-50 row">
-        <h2 class="col-md-6">
+    <div class="section-2 mt-100 mb-100 row">
+        <h3 class="col-md-6">
             <?php the_field( 'section_2_title' ); ?>
-        </h2>
+        </h3>
 
         <div class="col-md-6">
             <h6><?php the_field( 'section_2_description' ); ?></h6>
@@ -223,24 +262,63 @@ get_header();
     <!-- Web View -->
     <div class="team-web-view">
         <!-- Our Team -->
-        <div class="our-team mt-50">
+        <div class="our-team">
             <div class="row">
-                <h2 class="col-sm-12">Our Team</h2>
+                <h2 class="col-sm-12 mb-50">meet the team</h2>
 
-                <?php if ( have_rows( 'teams' ) ) : ?>
-                    <?php while ( have_rows( 'teams' ) ) : the_row(); ?>
-                        <div class="col-md-4">
+                <!-- CEO -->
+                <?php if ( have_rows( 'ceo' ) ) : ?>
+                    <?php while ( have_rows( 'ceo' ) ) : the_row(); ?>
+                        <div class="col-md-3 col-sm-12">
                             <div class="team-image">
                                 <?php if ( get_sub_field( 'photo' ) ) { ?>
                                     <img src="<?php the_sub_field( 'photo' ); ?>" />
                                 <?php } ?>
                             </div>
-                            <div class="team-name">
-                                <h5><?php the_sub_field( 'name' ); ?></h5>
-                                <small><?php the_sub_field( 'job_position' ); ?></small>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <h5 class="ceo-position"><?php the_sub_field( 'position' ); ?></h5>
+                            <p class="team-name"><b><?php the_sub_field( 'name' ); ?></b></p>
+                            <p class="team-summary"><?php the_sub_field( 'summary' ); ?></p>
+                        </div>
+                        <div class="col-md-3 col-sm-12"></div>
+                        <div class="col-md-3 col-sm-12"></div>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+
+                <!-- Team Leaders -->
+                <div class="row team-leaders">
+                    <?php if ( have_rows( 'team_leaders' ) ) : ?>
+                        <?php while ( have_rows( 'team_leaders' ) ) : the_row(); ?>
+                            <div class="col-md-3 col-sm-12 mt-20">
+                                <div class="team-image">
+                                    <?php if ( get_sub_field( 'photo' ) ) { ?>
+                                        <img src="<?php the_sub_field( 'photo' ); ?>" />
+                                    <?php } ?>
+                                    <h6 class="team-position"><b><?php the_sub_field( 'job_position' ); ?></b></h6>
+                                    <p class="team-name"><?php the_sub_field( 'name' ); ?></p>
+                                </div>
                             </div>
-                            <div class="team-description">
-                                <h6><?php the_sub_field( 'summary' ); ?></h6>
+                        <?php endwhile; ?>
+                    <?php else : ?>
+                        <?php // no rows found ?>
+                    <?php endif; ?>
+                </div>
+
+                <!-- Team Divisions -->
+                <?php if ( have_rows( 'team_divisions' ) ) : ?>
+                    <?php while ( have_rows( 'team_divisions' ) ) : the_row(); ?>
+                        <div class="col-md-3 col-sm-12 mt-20">
+                            <h6 class="team-position"><b><?php the_sub_field( 'division' ); ?></b></h6>
+
+                            <div class="mt-10">
+                                <?php if ( have_rows( 'teams' ) ) : ?>
+                                    <?php while ( have_rows( 'teams' ) ) : the_row(); ?>
+                                        <p style="margin-bottom: 0;"><?php the_sub_field( 'name' ); ?></p>
+                                    <?php endwhile; ?>
+                                <?php else : ?>
+                                    <?php // no rows found ?>
+                                <?php endif; ?>
                             </div>
                         </div>
                     <?php endwhile; ?>
@@ -252,11 +330,10 @@ get_header();
     </div>
 
     <!-- Mobile View -->
-    <div class="team-mobile-view">
-        <!-- Our Team -->
+    <!-- <div class="team-mobile-view">
         <div class="our-team mt-50">
             <div class="row">
-                <h2 class="col-sm-12">Our Team</h2>
+                <h2 class="col-sm-12">meet the team</h2>
 
                 <div class="slideshow-container">
                     <?php if ( have_rows( 'teams' ) ) : ?>
@@ -282,12 +359,12 @@ get_header();
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
 <script>
     let slideIndex = 0;
-    showSlides();
+    // showSlides();
 
     function showSlides() {
         let i;
