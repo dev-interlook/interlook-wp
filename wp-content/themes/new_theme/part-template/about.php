@@ -139,7 +139,7 @@ get_header();
     }
     
     .our-team .team-leaders {
-        margin: 100px 0;
+        margin: 50px 0;
     }
     .team-leaders .team-position {
         margin: 15px 0;
@@ -158,9 +158,6 @@ get_header();
             position: unset;
         }
 
-        .our-team .team-leaders {
-            margin: 50px 0;
-        }
         .team-leaders .team-name {
             margin: 0;
         }
