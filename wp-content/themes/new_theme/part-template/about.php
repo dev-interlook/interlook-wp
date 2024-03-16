@@ -296,7 +296,7 @@ get_header();
                                     <?php if ( get_sub_field( 'photo' ) ) { ?>
                                         <img src="<?php the_sub_field( 'photo' ); ?>" />
                                     <?php } ?>
-                                    <h6 class="team-position"><?php the_sub_field( 'job_position' ); ?></h6>
+                                    <p class="team-position"><?php the_sub_field( 'job_position' ); ?></p>
                                     <p class="team-name"><?php the_sub_field( 'name' ); ?></p>
                                 </div>
                             </div>
@@ -309,8 +309,8 @@ get_header();
                 <!-- Team Divisions -->
                 <?php if ( have_rows( 'team_divisions' ) ) : ?>
                     <?php while ( have_rows( 'team_divisions' ) ) : the_row(); ?>
-                        <div class="col-md-3 col-sm-12 mt-20">
-                            <h6 class="team-position"><b><?php the_sub_field( 'division' ); ?></b></h6>
+                        <div class="col-md-3 col-sm-12 mt-20" style="flex: 0 0 fit-content;">
+                            <p class="team-position"><b><?php the_sub_field( 'division' ); ?></b></p>
 
                             <div class="mt-10">
                                 <?php if ( have_rows( 'teams' ) ) : ?>
