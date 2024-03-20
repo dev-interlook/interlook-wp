@@ -92,8 +92,7 @@
             <section id="projects" class="projects" data-scroll-index="2">
                 <div style="margin: 0px 10% 5% 10%;">
                     <div class="row">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-8 px-5">
+                        <div class="col-md-8">
                             <h5 class="section-sub-title"><?php the_sub_field( 'title' ); ?></h5>
 
                             <div class="owl-carousel owl-theme">
@@ -113,6 +112,7 @@
                             <?php endif; ?>
                             </div>
                         </div>
+                        <div class="col-md-4"></div>
                     </div>
                 </div>
             </section>
