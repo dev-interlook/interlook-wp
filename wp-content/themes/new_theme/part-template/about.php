@@ -304,7 +304,7 @@ get_header();
                 </div>
 
                 <!-- Team Divisions -->
-                <?php if ( have_rows( 'team_divisions' ) ) : ?>
+                <!-- <?php if ( have_rows( 'team_divisions' ) ) : ?>
                     <?php while ( have_rows( 'team_divisions' ) ) : the_row(); ?>
                         <div class="col-md-3 col-sm-12 mt-20" style="flex: 0 0 fit-content;">
                             <p class="team-position"><b><?php the_sub_field( 'division' ); ?></b></p>
@@ -322,7 +322,7 @@ get_header();
                     <?php endwhile; ?>
                 <?php else : ?>
                     <?php // no rows found ?>
-                <?php endif; ?>
+                <?php endif; ?> -->
             </div>
         </div>
     </div>
