@@ -185,6 +185,7 @@ function getPostmetaData($post_id) {
         z-index: 100;
     }
     .nav_category {
+        width: 100%;
         height: 35vh;
         display: flex;
         flex-direction: column;
@@ -201,6 +202,9 @@ function getPostmetaData($post_id) {
         height: 77vh;
         overflow-y: scroll;
         margin-left: 30%;
+    }
+    .title-lates {
+        display: none;
     }
 
     @media screen and (max-width: 480px) {
@@ -219,6 +223,9 @@ function getPostmetaData($post_id) {
             margin-left: 0;
             height: auto;
             overflow-y: auto;
+        }
+        .title-lates {
+            display: block;
         }
     }
 </style>
@@ -308,6 +315,7 @@ function getPostmetaData($post_id) {
                     <!-- Project Built -->
                     <div class="nav_category">
                         <div class="row" style="margin: 0;">
+                            <h6 class="col-md-12 title-lates">Project Built</h6>
                             <?php
                             if (is_array($r_latest_built) && count($r_latest_built)) :
                                 foreach ($r_latest_built as $row) :
@@ -334,6 +342,7 @@ function getPostmetaData($post_id) {
                     <!-- Design Project -->
                     <div class="nav_category">
                         <div class="row" style="margin: 0;">
+                            <h6 class="col-md-12 title-lates">Design Project</h6>
                             <?php
                             if (is_array($r_latest_design) && count($r_latest_design)) :
                                 foreach ($r_latest_design as $row) :
