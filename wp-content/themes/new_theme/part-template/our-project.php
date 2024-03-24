@@ -66,17 +66,26 @@ $q_latest_design = "
 $r_latest_design = $wpdb->get_results($q_latest_design);
 
 // List Project
+$category = "";
 $selected_category = 0;
 $project_results = [];
 if (isset($_GET['c'])) {
     $selected_category = $_GET['c'];
+
+    $q_where = "WHERE 1=1";
+    if ($selected_category == $cat_built_parent || $selected_category == $cat_design_parent)
+        $q_where = "WHERE tt.parent = $selected_category";
+    else
+        $q_where = "WHERE tt.term_id = $selected_category";
+
     $project_query = "
-        SELECT p.* FROM wp0k_posts p
+        SELECT p.*, t.name as category FROM wp0k_posts p
         JOIN wp0k_term_relationships tr ON tr.object_id = p.ID
         JOIN wp0k_term_taxonomy tt ON tt.term_taxonomy_id = tr.term_taxonomy_id
-        WHERE tt.term_id = $selected_category
+        JOIN wp0k_terms t ON t.term_id = tt.term_id
+        $q_where
         GROUP BY p.ID
-        ORDER BY p.post_date_gmt DESC
+        ORDER BY t.name ASC, p.post_date_gmt DESC
     ";
     $project_results = $wpdb->get_results($project_query);
 }
@@ -233,7 +242,15 @@ function getPostmetaData($post_id) {
                 </div>
                 <!-- Project Built -->
                 <div class="nav_category">
-                    <h6 style="margin-bottom: 5px;">Project Built</h4>
+                    <h6 style="margin-bottom: 5px;">
+                        <a href="<?=$current_url?>?c=<?=$cat_built_parent?>" style="padding: 0;">
+                        <?php if ($selected_category == $cat_built_parent) : ?>
+                            <span style="color: #1e73be; text-decoration: underline;">Project Built</span>
+                        <?php else : ?>
+                            <span>Project Built</span>
+                        <?php endif; ?>
+                        </a>
+                    </h4>
 
                     <div>
                     <?php
@@ -256,7 +273,15 @@ function getPostmetaData($post_id) {
                 <hr style="border-top: 1px black solid; margin-bottom: 15px;">
                 <!-- Design Project -->
                 <div class="nav_category">
-                    <h6 style="margin-bottom: 5px;">Design Project</h4>
+                    <h6 style="margin-bottom: 5px;">
+                        <a href="<?=$current_url?>?c=<?=$cat_design_parent?>" style="padding: 0;">
+                        <?php if ($selected_category == $cat_design_parent) : ?>
+                            <span style="color: #1e73be; text-decoration: underline;">Design Project</span>
+                        <?php else : ?>
+                            <span>Design Project</span>
+                        <?php endif; ?>
+                        </a>
+                    </h4>
 
                     <div>
                     <?php
@@ -299,7 +324,7 @@ function getPostmetaData($post_id) {
                             <?php
                                 endforeach;
                             ?>
-                                <a href="" style="color: #1e73be; margin-top: -35px; height: min-content;" class="col-md-12 text-right">more...</a>
+                                <a href="<?=$current_url?>?c=<?=$cat_built_parent?>" style="color: #1e73be; margin-top: -35px; height: min-content;" class="col-md-12 text-right">more...</a>
                             <?php
                             endif;
                             ?>
@@ -325,7 +350,7 @@ function getPostmetaData($post_id) {
                             <?php
                                 endforeach;
                             ?>
-                                <a href="" style="color: #1e73be; margin-top: -35px; height: min-content;" class="col-md-12 text-right">more...</a>
+                                <a href="<?=$current_url?>?c=<?=$cat_design_parent?>" style="color: #1e73be; margin-top: -35px; height: min-content;" class="col-md-12 text-right">more...</a>
                             <?php
                             endif;
                             ?>
@@ -339,6 +364,13 @@ function getPostmetaData($post_id) {
                         foreach ($project_results as $row) :
                             $postmeta = getPostmetaData($row->ID);
                     ?>
+                        <?php if ($category != $row->category): ?>
+                        <div class="col-md-12">
+                            <h6><?= $row->category; ?></h6>
+                        </div>
+                        <?php $category = $row->category; ?>
+                        <?php endif; ?>
+                        
                         <div class="col-md-6 col-lg-4 content_img">
                             <a href="<?=get_site_url()?>/projects/<?=$row->post_name?>" class="force-fit-img">
                                 <img src="<?=wp_get_attachment_image_url($postmeta['cover'])?>" alt="Project Cover">
@@ -360,13 +392,20 @@ function getPostmetaData($post_id) {
 <?php get_footer();?>
 
 <script>
-    $("#latest-project").show();
-    $(".right_side").css({
-        overflowY: "unset"
-    });
+    const searchParams = new URLSearchParams(window.location.search);
+    if (searchParams.has('c')) {
+        $("#latest-project").hide();
+        $("#categorized-project").show();
+        $(".right_side").css({
+            overflowY: "scroll"
+        });
 
-    $("#categorized-project").hide();
-    // $(".right_side").css({
-    //     overflowY: "scroll"
-    // });
+    } else {
+        $("#latest-project").show();
+        $("#categorized-project").hide();
+        $(".right_side").css({
+            overflowY: "unset"
+        });
+    }
+
 </script>
