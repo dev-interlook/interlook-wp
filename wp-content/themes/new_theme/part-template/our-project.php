@@ -335,7 +335,7 @@ function getPostmetaData($post_id) {
                                 <a href="<?=$current_url?>?c=<?=$cat_built_parent?>" style="color: #1e73be; margin-top: -35px; height: min-content;" class="col-md-12 text-right">more...</a>
                             <?php
                             else:
-                                echo "<div class='col-md-12'><p>There is no project related to this category yet</p></div>";
+                                echo "<div class='col-md-12'><p>There is no project related to this category yet.</p></div>";
                             endif;
                             ?>
                         </div>
@@ -364,7 +364,7 @@ function getPostmetaData($post_id) {
                                 <a href="<?=$current_url?>?c=<?=$cat_design_parent?>" style="color: #1e73be; margin-top: -35px; height: min-content;" class="col-md-12 text-right">more...</a>
                             <?php
                             else:
-                                echo "<div class='col-md-12'><p>There is no project related to this category yet</p></div>";
+                                echo "<div class='col-md-12'><p>There is no project related to this category yet.</p></div>";
                             endif;
                             ?>
                         </div>
@@ -395,7 +395,7 @@ function getPostmetaData($post_id) {
                     <?php
                         endforeach;
                     else:
-                        echo "<div class='col-md-12'><p>There is no project related to this category yet</p></div>";
+                        echo "<div class='col-md-12'><p>There is no project related to this category yet.</p></div>";
                     endif;
                     ?>
                 </div>
