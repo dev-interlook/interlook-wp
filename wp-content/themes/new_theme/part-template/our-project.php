@@ -40,20 +40,46 @@ $category_design = "
 ";
 $cat_design_results = $wpdb->get_results($category_design);
 
-// List Project
-$selected_category = count($cat_built_results) ? $cat_built_results[0]->term_id : 0;
-$selected_category = ($selected_category == 0 && count($cat_design_results)) ? $cat_design_results[0]->term_id : $selected_category;
-if (isset($_GET['c'])) {
-    $selected_category = $_GET['c'];
-}
-$project_query = "
+// Latest 3 project
+$cat_built_parent = $wpdb->get_results("SELECT sub_t.term_id FROM wp0k_terms sub_t WHERE sub_t.slug = 'project'")[0]->term_id;
+$q_latest_built = "
     SELECT p.* FROM wp0k_posts p
     JOIN wp0k_term_relationships tr ON tr.object_id = p.ID
     JOIN wp0k_term_taxonomy tt ON tt.term_taxonomy_id = tr.term_taxonomy_id
-    WHERE tt.term_id = $selected_category
+    WHERE tt.term_id = $cat_built_parent
     GROUP BY p.ID
+    ORDER BY p.post_date_gmt DESC
+    LIMIT 3
 ";
-$project_results = $wpdb->get_results($project_query);
+$r_latest_built = $wpdb->get_results($q_latest_built);
+
+$cat_design_parent = $wpdb->get_results("SELECT sub_t.term_id FROM wp0k_terms sub_t WHERE sub_t.slug = 'design-project'")[0]->term_id;
+$q_latest_design = "
+    SELECT p.* FROM wp0k_posts p
+    JOIN wp0k_term_relationships tr ON tr.object_id = p.ID
+    JOIN wp0k_term_taxonomy tt ON tt.term_taxonomy_id = tr.term_taxonomy_id
+    WHERE tt.term_id = $cat_design_parent
+    GROUP BY p.ID
+    ORDER BY p.post_date_gmt DESC
+    LIMIT 3
+";
+$r_latest_design = $wpdb->get_results($q_latest_design);
+
+// List Project
+$selected_category = 0;
+$project_results = [];
+if (isset($_GET['c'])) {
+    $selected_category = $_GET['c'];
+    $project_query = "
+        SELECT p.* FROM wp0k_posts p
+        JOIN wp0k_term_relationships tr ON tr.object_id = p.ID
+        JOIN wp0k_term_taxonomy tt ON tt.term_taxonomy_id = tr.term_taxonomy_id
+        WHERE tt.term_id = $selected_category
+        GROUP BY p.ID
+        ORDER BY p.post_date_gmt DESC
+    ";
+    $project_results = $wpdb->get_results($project_query);
+}
 
 function getPostmetaData($post_id) {
     global $wpdb;
@@ -253,27 +279,94 @@ function getPostmetaData($post_id) {
             </div>
 
             <div class="right_side">
-                <div class="row" style="margin: 0px 0px 0px 0px;">
-                <?php
-                if (is_array($project_results) && count($project_results)) :
-                    foreach ($project_results as $row) :
-                        $postmeta = getPostmetaData($row->ID);
-                ?>
-                    <div class="col-md-6 col-lg-4 content_img">
-                        <a href="<?=get_site_url()?>/projects/<?=$row->post_name?>" class="force-fit-img">
-                            <img src="<?=wp_get_attachment_image_url($postmeta['cover'])?>" alt="Project Cover">
-                            <div class="content_wrap">
-                                <h6><?=$row->post_title?></h6>
-                            </div>
-                        </a>
+                <div id="latest-project" style="margin-top: 65px; overflow-y: unset;">
+                    <!-- Project Built -->
+                    <div class="nav_category">
+                        <div class="row" style="margin: 0;">
+                            <?php
+                            if (is_array($r_latest_built) && count($r_latest_built)) :
+                                foreach ($r_latest_built as $row) :
+                                    $postmeta = getPostmetaData($row->ID);
+                            ?>
+                                    <div class="col-md-4 content_img">
+                                        <a href="<?=get_site_url()?>/projects/<?=$row->post_name?>" class="force-fit-img" style="padding: 0;">
+                                            <img src="<?=wp_get_attachment_image_url($postmeta['cover'])?>" alt="Project Cover">
+                                            <div class="content_wrap">
+                                                <h6><?=$row->post_title?></h6>
+                                            </div>
+                                        </a>
+                                    </div>
+                            <?php
+                                endforeach;
+                            ?>
+                                <a href="" style="color: #1e73be; margin-top: -35px; height: min-content;" class="col-md-12 text-right">more...</a>
+                            <?php
+                            endif;
+                            ?>
+                        </div>
                     </div>
-                <?php
-                    endforeach;
-                endif;
-                ?>
+                    <hr style="border-top: 1px black solid; margin-bottom: 15px;">
+                    <!-- Design Project -->
+                    <div class="nav_category">
+                        <div class="row" style="margin: 0;">
+                            <?php
+                            if (is_array($r_latest_design) && count($r_latest_design)) :
+                                foreach ($r_latest_design as $row) :
+                                    $postmeta = getPostmetaData($row->ID);
+                            ?>
+                                    <div class="col-md-4 content_img">
+                                        <a href="<?=get_site_url()?>/projects/<?=$row->post_name?>" class="force-fit-img" style="padding: 0;">
+                                            <img src="<?=wp_get_attachment_image_url($postmeta['cover'])?>" alt="Project Cover">
+                                            <div class="content_wrap">
+                                                <h6><?=$row->post_title?></h6>
+                                            </div>
+                                        </a>
+                                    </div>
+                            <?php
+                                endforeach;
+                            ?>
+                                <a href="" style="color: #1e73be; margin-top: -35px; height: min-content;" class="col-md-12 text-right">more...</a>
+                            <?php
+                            endif;
+                            ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="categorized-project" class="row" style="margin: 0;">
+                    <?php
+                    if (is_array($project_results) && count($project_results)) :
+                        foreach ($project_results as $row) :
+                            $postmeta = getPostmetaData($row->ID);
+                    ?>
+                        <div class="col-md-6 col-lg-4 content_img">
+                            <a href="<?=get_site_url()?>/projects/<?=$row->post_name?>" class="force-fit-img">
+                                <img src="<?=wp_get_attachment_image_url($postmeta['cover'])?>" alt="Project Cover">
+                                <div class="content_wrap">
+                                    <h6><?=$row->post_title?></h6>
+                                </div>
+                            </a>
+                        </div>
+                    <?php
+                        endforeach;
+                    endif;
+                    ?>
                 </div>
             </div>
             <br><br>
         </div>
     </section>
+
 <?php get_footer();?>
+
+<script>
+    $("#latest-project").show();
+    $(".right_side").css({
+        overflowY: "unset"
+    });
+
+    $("#categorized-project").hide();
+    // $(".right_side").css({
+    //     overflowY: "scroll"
+    // });
+</script>
