@@ -3674,7 +3674,7 @@ button.mfp-arrow {
         max-width: 100%;
     }
     .navbar .navbar-collapse {
-        max-height: 360px;
+        /* max-height: 360px; */
         overflow: auto;
         background: #ffffffee;
         text-align: left;

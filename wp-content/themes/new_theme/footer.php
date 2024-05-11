@@ -96,7 +96,7 @@
 <script>
     $(document).click(function(e) {
         if (!$(e.target).is('#navbarSupportedContent')) {
-            $('#navbarSupportedContent').collapse('hide');
+            // $('#navbarSupportedContent').collapse('hide');
         }
     });
     $('textarea').attr('rows', 3)
