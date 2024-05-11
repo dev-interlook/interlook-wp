@@ -155,7 +155,7 @@
                         <!-- Booking Menu -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="bookingDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                Booking
+                                Booking Our Services
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="bookingDropdown" style="background-color: #ffffffee;">
                                 <li class="nav-item"><a class="nav-link" href="<?= home_url('/booking-design') ?>" >Design Only</a></li>
