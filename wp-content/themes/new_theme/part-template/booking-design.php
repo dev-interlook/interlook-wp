@@ -38,7 +38,7 @@ get_header(); ?>
 				<div class="row">
 					<div class="col-md-12">
 						<br>
-						<h2 class="section-title"><?php the_sub_field( 'title_page' ); ?></h2>
+						<h2 class="section-title" style="text-wrap: pretty;"><?php the_sub_field( 'title_page' ); ?></h2>
           </div>
 				</div>
 				<div class="row">
