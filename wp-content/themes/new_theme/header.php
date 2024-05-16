@@ -135,7 +135,7 @@
                 </button>
                 <?php if ( get_field( 'logo', 'option' ) ) { ?>
                 <span class="text-center" style="width: 70%;">
-                    <a class="logo" href="<?php bloginfo( 'url' ); ?>"> <img src="<?php the_field( 'logo', 'option' ); ?>" alt=""> </a>
+                    <a class="logo" href="<?php bloginfo( 'url' ); ?>"> <img id="header-logo" src="<?php the_field( 'logo', 'option' ); ?>" alt=""> </a>
                 </span>
                 <?php } ?>
             </div>

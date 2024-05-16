@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-4 mb-20">
                 <div class="col-md-12" style="padding: 0;">
-                    <img class="monogram-logo-width" src="<?php echo get_template_directory_uri(); ?>/img/interlook-logo-black.png" alt="Interlook Monogram Logo">
+                    <img id="footer-logo" class="monogram-logo-width" src="<?php echo get_template_directory_uri(); ?>/img/interlook-logo-black.png" alt="Interlook Monogram Logo">
                 </div>
                 <div class="col-md-12 display-only-desktop" style="position: absolute; bottom: 0; left: 0;">
                     <div class="text-left">
@@ -29,7 +29,7 @@
                                     <?php the_sub_field( 'title' ); ?>
                                 </h6>
                             </div>
-                            <p class="p-light" style="color: black;"><?php the_sub_field( 'contnent' ); ?></p>
+                            <p id="footer-<?php the_sub_field( 'title' ); ?>" class="p-light" style="color: black;"><?php the_sub_field( 'contnent' ); ?></p>
                         </div>
                     <?php endwhile; ?>
                     </div>
