@@ -56,6 +56,17 @@ get_header();
             font-size: 25px;
         }
     }
+
+    .success-img-cover {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-height: 100%;
+        min-width: 100%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+    }
 </style>
 
 <!-- Content -->
@@ -64,7 +75,7 @@ get_header();
     <!-- Banner Header -->
     <div class="banner-header">
         <?php if ( get_field( 'image_banner' ) ) { ?>
-            <img src="<?php the_field( 'image_banner' ); ?>" />
+            <img class="success-img-cover" src="<?php the_field( 'image_banner' ); ?>" />
         <?php } ?>
         
         <h1><?php the_field( 'text_banner' ); ?></h1>
