@@ -53,7 +53,7 @@ get_header(); ?>
 
   <script>
     function redirectToEndpoint() {
-        window.location.href = '/booking-success';
+        window.location.href = '/booking-success?cp=worksoul';
     }
 
     const responseElement = document.getElementsByClassName('wpcf7-response-output')[0];

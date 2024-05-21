@@ -82,3 +82,18 @@ get_header();
     </div>
 
 <?php get_footer();?>
+
+<!-- Modify the Header & Footer -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const currCp = urlParams.get('cp');
+    if (currCp == 'worksoul') {
+        document.getElementById("header-logo").src = "<?php echo get_template_directory_uri(); ?>/img/worksoul-logo-black.png";
+        document.getElementById("footer-logo").src = "<?php echo get_template_directory_uri(); ?>/img/worksoul-logo-black.png";
+        document.getElementById("footer-Phone").innerText = "+62 812 2125 4040";
+        document.getElementById("footer-Email").innerText = "worksoul.co.id@gmail.com";
+        document.getElementById("footer-Our Address").innerText = "Office\nJalan Cijerokaso, Cluster Green Residence Unit E, Sarijadi - Bandung\n\nWorkshop\nJalan Haji Gofur RT 05 RW 18, Desa Cilame, Kabupaten Bandung Barat";
+    }
+  });
+</script>
