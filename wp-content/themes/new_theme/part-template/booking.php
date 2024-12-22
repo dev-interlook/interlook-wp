@@ -104,27 +104,23 @@ get_header(); ?>
     document.querySelector('.static-booking-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       
-      const formData = {
-        kode_promo: document.getElementById('kodePromo').value,
-        nama_lengkap: document.getElementById('namaLengkap').value,
-        email: document.getElementById('email').value, 
-        nomor_telepon: document.getElementById('nomorTelepon').value,
-        alamat_project: document.getElementById('alamatProject').value,
-        luas_tanah: document.getElementById('luasTanah').value,
-        luas_bangunan: document.getElementById('luasBangunan').value,
-        foto_eksisting: document.getElementById('fotoEksisting').files[0],
-        referensi_desain: document.getElementById('referensiDesain').files[0],
-        permasalahan_kebutuhan: document.getElementById('permasalahanKebutuhan').value,
-        budget_pembangunan: document.getElementById('budgetPembangunan').value
-      };
+      const formData = new FormData();
+      formData.append('kode_promo', document.getElementById('kodePromo').value);
+      formData.append('nama_lengkap', document.getElementById('namaLengkap').value);
+      formData.append('email', document.getElementById('email').value);
+      formData.append('nomor_telepon', document.getElementById('nomorTelepon').value);
+      formData.append('alamat_project', document.getElementById('alamatProject').value);
+      formData.append('luas_tanah', document.getElementById('luasTanah').value);
+      formData.append('luas_bangunan', document.getElementById('luasBangunan').value);
+      formData.append('foto_eksisting', document.getElementById('fotoEksisting').files[0]);
+      formData.append('referensi_desain', document.getElementById('referensiDesain').files[0]);
+      formData.append('permasalahan_kebutuhan', document.getElementById('permasalahanKebutuhan').value);
+      formData.append('budget_pembangunan', document.getElementById('budgetPembangunan').value);
 
       try {
         const response = await fetch('https://mailgun-webhook.interlook.co.id/send-email', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(formData)
+          body: formData
         });
 
         if (response.ok) {
