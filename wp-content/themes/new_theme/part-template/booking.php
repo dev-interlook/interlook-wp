@@ -124,7 +124,7 @@ get_header(); ?>
         });
 
         if (response.ok) {
-          // window.location.href = '/booking-success';
+          window.location.href = '/booking-success';
         } else {
           throw new Error('Failed to submit form');
         }
