@@ -191,9 +191,9 @@ input[type="reset"]:hover,
 input[type="button"]:hover,
 button:hover {
     font-family: 'DM Sans', sans-serif !important;
-    background-color: #fff !important;
+    background-color: #000 !important;
     color: white !important;
-    border: 1px solid #000;
+    border: 1px solid #fff;
 }
 select {
     padding: 10px;
@@ -3916,3 +3916,32 @@ min-width: 100%;}
 @keyframes linearwipe {
     from { width: 0; }
 }
+
+.required {
+    color: red;
+}
+
+/* NEW STATIC BOOKING FORM DESIGN */
+.static-booking-form {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(245, 245, 245, 0.5);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    min-height: 100px;
+}
+
+.static-booking-form input, textarea {
+    border-radius: 0.25rem;
+}
+.static-booking-form input:focus, textarea:focus {
+    box-shadow: 0 1px 0 0 black !important;
+}
+.static-booking-form label {
+    font-weight: bold;
+}
+.static-booking-form button {
+    margin: 15px 0;
+    padding: 1rem;
+}
+/* END OF NEW STATIC BOOKING FORM DESIGN */
