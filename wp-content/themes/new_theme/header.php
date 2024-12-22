@@ -153,7 +153,7 @@
                         <?php endif; ?>
 
                         <!-- Booking Menu -->
-                        <li class="nav-item dropdown">
+                        <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="bookingDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                 Booking Our Services
                             </a>
@@ -161,7 +161,7 @@
                                 <li class="nav-item"><a class="nav-link" href="<?= home_url('/booking-design') ?>" >Design Only</a></li>
                                 <li class="nav-item"><a class="nav-link" href="<?= home_url('/booking-construction') ?>" >Construction Only</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>
