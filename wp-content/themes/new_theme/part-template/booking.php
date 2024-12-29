@@ -87,7 +87,7 @@ get_header(); ?>
               </div>
               <div class="form-group col-md-12">
                 <label for="budgetPembangunan">Budget Pembangunan <span class="required">*</span></label>
-                <input type="text" id="budgetPembangunan" aria-describedby="budgetPembangunanHelp">
+                <input type="number" id="budgetPembangunan" aria-describedby="budgetPembangunanHelp">
               </div>
 
               <div class="col-md-12 d-flex justify-content-end">
