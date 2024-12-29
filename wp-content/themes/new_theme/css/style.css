@@ -132,6 +132,7 @@ textarea {
 input[type="password"]:focus,
 input[type="email"]:focus,
 input[type="text"]:focus,
+input[type="number"]:focus,
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus,
@@ -142,6 +143,7 @@ textarea:focus {
 input[type="password"],
 input[type="email"],
 input[type="text"],
+input[type="number"],
 input[type="file"],
 textarea {
     font-family: 'DM Sans', sans-serif !important;
@@ -3374,6 +3376,7 @@ button.mfp-arrow {
   margin: 0;
 }
 .error-form .form-group input[type="text"],
+.error-form .form-group input[type="number"],
 .error-form .form-group input[type="search"],
 .error-form .form-group input[type="email"] {
   position: relative;
@@ -3391,6 +3394,7 @@ button.mfp-arrow {
   transition: all 300ms ease;
 }
 .error-form .form-group input[type="text"]:focus,
+.error-form .form-group input[type="number"]:focus,
 .error-form .form-group input[type="email"]:focus,
 .error-form .form-group input[type="search"]:focus {
   border-color: #323232;
