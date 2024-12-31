@@ -17,6 +17,7 @@
 
 
 get_header(); ?>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Content -->
   <?php if ( have_rows( 'banner' ) ) : ?>
 	<?php while ( have_rows( 'banner' ) ) : the_row(); ?>
@@ -96,13 +97,24 @@ get_header(); ?>
             </form>
 				  </div>
         </div>
-      </section>
+      </div>
+    </section>
+
+    <div id="loading" class="loading-overlay d-flex justify-content-center align-items-center">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
   <?php endwhile; ?>
   <?php endif; ?>
 
   <script>
     document.querySelector('.static-booking-form').addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      const loading = document.getElementById('loading');
+      loading.style.visibility = 'visible';
+      document.body.style.pointerEvents = 'none';
       
       const formData = new FormData();
       formData.append('kode_promo', document.getElementById('kodePromo').value);
@@ -124,6 +136,10 @@ get_header(); ?>
         });
 
         if (response.ok) {
+          // hide the loading overlay
+          loading.style.visibility = 'hidden';
+          document.body.style.pointerEvents = 'auto';
+          // redirect to the booking success page
           window.location.href = '/booking-success';
         } else {
           throw new Error('Failed to submit form');

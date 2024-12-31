@@ -3948,4 +3948,15 @@ min-width: 100%;}
     margin: 15px 0;
     padding: 1rem;
 }
+
+.loading-overlay {
+    visibility: hidden;
+    background: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
 /* END OF NEW STATIC BOOKING FORM DESIGN */
