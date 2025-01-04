@@ -109,6 +109,20 @@ get_header(); ?>
   <?php endif; ?>
 
   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Get the query parameter 'code' from the URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const codeValue = urlParams.get("code");
+
+      // Check if 'code' exists and set it to the input field
+      if (codeValue) {
+          const inputField = document.getElementById("kodePromo");
+          if (inputField) {
+              inputField.value = codeValue;
+          }
+      }
+    });
+
     document.querySelector('.static-booking-form').addEventListener('submit', async (e) => {
       e.preventDefault();
 
