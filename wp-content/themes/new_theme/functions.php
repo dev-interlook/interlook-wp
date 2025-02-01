@@ -228,3 +228,7 @@ add_action( 'init', 'custom_post_type', 0 );
 /* New_theme Theme Template Loader */
 
 
+function add_custom_floating_menu_script() {
+    wp_enqueue_script('custom-floating-menu', get_template_directory_uri() . '/js/custom-floating-menu.js', array(), '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'add_custom_floating_menu_script');
