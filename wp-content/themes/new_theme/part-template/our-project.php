@@ -183,6 +183,14 @@ function getPostmetaData($post_id) {
         width: 25%;
         float: left;
         z-index: 100;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;     /* Firefox */
+        overflow-y: scroll;        /* Enable vertical scroll */
+    }
+    /* Chrome, Safari and Opera */
+    .left-side::-webkit-scrollbar {
+        display: none;
+        width: 0;
     }
     .left-side.mobile-only {
         display: none;
@@ -225,8 +233,15 @@ function getPostmetaData($post_id) {
     .right-side {
         width: 75%;
         height: 77vh;
-        overflow-y: scroll;
         margin-left: 30%;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;     /* Firefox */
+        overflow-y: scroll;        /* Enable vertical scroll */
+    }
+    /* Chrome, Safari and Opera */
+    .right-side::-webkit-scrollbar {
+        display: none;
+        width: 0;
     }
     .title-lates {
         display: none;
