@@ -313,7 +313,7 @@ function getPostmetaData($post_id) {
                 </div>
                 <!-- Project Built -->
                 <div class="nav-category">
-                    <h5 style="margin-bottom: 5px;">
+                    <h5 style="margin-bottom: 5px; background-color: black; padding: 10px 15px; color: white;">
                         <a href="<?=$current_url?>?c=<?=$cat_built_parent?>" style="padding: 0;">
                         <?php if ($selected_category == $cat_built_parent) : ?>
                             <span style="color: #1e73be; text-decoration: underline;">Project Built</span>
@@ -341,10 +341,10 @@ function getPostmetaData($post_id) {
                     ?>
                     </div>
                 </div>
-                <hr style="border-top: 1px black solid; margin-bottom: 15px;">
+
                 <!-- Design Project -->
                 <div class="nav-category">
-                    <h5 style="margin-bottom: 5px;">
+                    <h5 style="margin-bottom: 5px; background-color: black; padding: 10px 15px; color: white;">
                         <a href="<?=$current_url?>?c=<?=$cat_design_parent?>" style="padding: 0;">
                         <?php if ($selected_category == $cat_design_parent) : ?>
                             <span style="color: #1e73be; text-decoration: underline;">Design Project</span>
@@ -426,7 +426,7 @@ function getPostmetaData($post_id) {
                             ?>
                         </div>
                     </div>
-                    <hr style="border-top: 1px black solid; margin-bottom: 15px;">
+
                     <!-- Design Project -->
                     <div class="projects-wrapper">
                         <div class="row" style="margin: 0;">
