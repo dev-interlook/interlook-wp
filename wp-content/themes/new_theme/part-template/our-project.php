@@ -363,7 +363,7 @@ function getPostmetaData($post_id) {
                             if (is_array($cat_built_results) && count($cat_built_results)) :
                                 foreach ($cat_built_results as $row) :
                             ?>
-                                <a href="<?=$current_url?>?c=<?=$row->term_id?>">
+                                <a href="<?=$current_url?>?c=<?=$row->term_id?>&p=Project Built">>
                                     <?php if ($selected_category == $row->term_id) : ?>
                                     <span style="color: #1e73be; text-decoration: underline;"><?=$row->name?></span>
                                     <?php else : ?>
@@ -414,7 +414,7 @@ function getPostmetaData($post_id) {
                             if (is_array($cat_built_results) && count($cat_built_results)) :
                                 foreach ($cat_built_results as $row) :
                             ?>
-                                <a href="<?=$current_url?>?c=<?=$row->term_id?>">
+                                <a href="<?=$current_url?>?c=<?=$row->term_id?>&p=Design Project">
                                     <?php if ($selected_category == $row->term_id) : ?>
                                     <span style="color: #1e73be; text-decoration: underline;"><?=$row->name?></span>
                                     <?php else : ?>
@@ -455,7 +455,7 @@ function getPostmetaData($post_id) {
 
                 <div id="categorized-project" class="row" style="margin: 0;">
                     <h5 class="col-md-12 title-lates">
-                        Project Built
+                        <?=$_GET['p']?>
                         <i class="fas fa-angle-right toggle-arrow"></i>
                     </h5>
                     <!-- sub category only for mobile -->
@@ -464,25 +464,30 @@ function getPostmetaData($post_id) {
                     if (is_array($cat_built_results) && count($cat_built_results)) :
                         foreach ($cat_built_results as $row) :
                     ?>
-                        <a href="<?=$current_url?>?c=<?=$row->term_id?>">
+                        <a href="<?=$current_url?>?c=<?=$row->term_id?>&p=<?=$_GET['p']?>">
                             <?php if ($selected_category == $row->term_id) : ?>
                             <span style="color: #1e73be; text-decoration: underline;"><?=$row->name?></span>
                             <?php else : ?>
                             <span><?=$row->name?></span>
                             <?php endif; ?>
                         </a>
-                    <?php
+                        <?php
                         endforeach;
                     endif;
                     ?>
+                    <small>
+                        <a href="<?=$current_url?>" style="color: #1e73be;">
+                            <i class="fas fa-arrow-left"></i> Kembali
+                        </a>
+                    </small>
                     </div>
+
 
                     <?php
                     if (is_array($project_results) && count($project_results)) :
                         foreach ($project_results as $row) :
                             $postmeta = getPostmetaData($row->ID);
                     ?>
-
                         <?php if ($category != $row->category): ?>
                         <div class="col-md-12">
                             <h6><?= $row->category; ?></h6>
@@ -529,11 +534,13 @@ function getPostmetaData($post_id) {
         });
     }
 
-    const arrows = document.querySelectorAll('.toggle-arrow');
+    const titles = document.querySelectorAll('.title-lates');
     const mobileSubCategory = document.querySelectorAll('.left-side.mobile-only');
-    arrows.forEach((arrow, index) => {
-        arrow.addEventListener('click', function() {
-            this.classList.toggle('rotate-down');
+    titles.forEach((title, index) => {
+        title.style.cursor = 'pointer';
+        title.addEventListener('click', function(event) {
+            const arrow = this.querySelector('.toggle-arrow');
+            arrow.classList.toggle('rotate-down');
             if (mobileSubCategory[index].classList.contains('show')) {
                 mobileSubCategory[index].classList.remove('show');
             } else {
