@@ -123,8 +123,19 @@ function getPostmetaData($post_id) {
     }
 
     .force-fit-img {
-        width: inherit;
-        height: inherit;
+        position: relative;
+        width: 100%;
+        padding-top: 100% !important; /* Creates 1:1 aspect ratio */
+        display: block;
+        overflow: hidden;
+    }
+    .force-fit-img img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* This maintains image quality while forcing 1:1 */
     }
 
     /* Parent Container for Image Hover */
