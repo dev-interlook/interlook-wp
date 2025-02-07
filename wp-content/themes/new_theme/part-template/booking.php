@@ -126,6 +126,31 @@ get_header(); ?>
     document.querySelector('.static-booking-form').addEventListener('submit', async (e) => {
       e.preventDefault();
 
+      // Check required fields
+      const requiredFields = {
+        'namaLengkap': 'Nama Lengkap',
+        'email': 'Email',
+        'alamatProject': 'Alamat Project', 
+        'luasTanah': 'Luas Tanah',
+        'luasBangunan': 'Luas Bangunan',
+        'fotoEksisting': 'Foto Eksisting',
+        'referensiDesain': 'Referensi Desain',
+        'budgetPembangunan': 'Budget Pembangunan'
+      };
+
+      for (const [fieldId, fieldName] of Object.entries(requiredFields)) {
+        const field = document.getElementById(fieldId);
+        if (fieldId.includes('foto') || fieldId.includes('referensi')) {
+          if (!field.files[0]) {
+            alert(`${fieldName} harus diisi!`);
+            return;
+          }
+        } else if (!field.value.trim()) {
+          alert(`${fieldName} harus diisi!`);
+          return;
+        }
+      }
+
       const loading = document.getElementById('loading');
       loading.style.visibility = 'visible';
       document.body.style.pointerEvents = 'none';
