@@ -449,7 +449,7 @@ function getPostmetaData($post_id) {
                             ?>
                                     <div class="col-md-4 content_img">
                                         <a href="<?=get_site_url()?>/projects/<?=$row->post_name?>" class="force-fit-img" style="padding: 0;">
-                                            <img src="<?=wp_get_attachment_image_url($postmeta['cover'])?>" alt="Project Cover">
+                                            <img src="<?=wp_get_attachment_image_url($postmeta['cover'], 'full')?>" alt="Project Cover">
                                             <div class="content_wrap">
                                                 <h6><?=$row->post_title?></h6>
                                             </div>
@@ -512,7 +512,7 @@ function getPostmetaData($post_id) {
                         
                         <div class="col-md-6 col-lg-4 content_img">
                             <a href="<?=get_site_url()?>/projects/<?=$row->post_name?>" class="force-fit-img">
-                                <img src="<?=wp_get_attachment_image_url($postmeta['cover'])?>" alt="Project Cover">
+                                <img src="<?=wp_get_attachment_image_url($postmeta['cover'], 'full')?>" alt="Project Cover">
                                 <div class="content_wrap">
                                     <h6><?=$row->post_title?></h6>
                                 </div>
