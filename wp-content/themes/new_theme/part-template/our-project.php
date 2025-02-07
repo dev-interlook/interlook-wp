@@ -179,12 +179,19 @@ function getPostmetaData($post_id) {
     }
 
 
-    .left_side {
+    .left-side {
         width: 25%;
         float: left;
         z-index: 100;
     }
-    .nav_category {
+    .left-side.mobile-only {
+        display: none;
+    }
+    .left-side.mobile-only.show {
+        display: block;
+    }
+
+    .nav-category {
         width: 100%;
         height: 35vh;
         display: flex;
@@ -192,12 +199,30 @@ function getPostmetaData($post_id) {
         overflow-y: scroll;
         padding-bottom: 15px;
     }
-    .nav_category a {
+    .nav-category a {
         width: 100%;
         padding-left: 15px;
     }
 
-    .right_side {
+    .projects-wrapper {
+        width: 100%;
+        height: 35vh;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        padding-bottom: 15px;
+    }
+    .projects-wrapper a {
+        width: 100%;
+        padding-left: 15px;
+    }
+    
+    #categorized-project a {
+        width: 100%;
+        padding-left: 15px;
+    }
+
+    .right-side {
         width: 75%;
         height: 77vh;
         overflow-y: scroll;
@@ -207,18 +232,31 @@ function getPostmetaData($post_id) {
         display: none;
     }
 
+    .rotate-down {
+        transform: rotate(90deg);
+        transition: transform 0.3s ease;
+    }
+    .toggle-arrow {
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    }
+
     @media screen and (max-width: 480px) {
-        .left_side {
+        .left-side {
             width: 100%;
             float: left;
             min-height: 10vh;
             padding: 0px 15px 15px 15px;
         }
-        .nav_category {
+        .nav-category {
+            display: none;
+        }
+
+        .projects-wrapper {
             height: auto;
         }
 
-        .right_side {
+        .right-side {
             width: 100%;
             margin-left: 0;
             height: auto;
@@ -243,13 +281,13 @@ function getPostmetaData($post_id) {
     <section class="section-padding2 mt-50">
         <div class="container">
             <br><br>
-            <div class="left_side">
+            <div class="left-side">
                 <div>
                     <h2 class="section-title2">Our Project</h2>
                 </div>
                 <!-- Project Built -->
-                <div class="nav_category">
-                    <h6 style="margin-bottom: 5px;">
+                <div class="nav-category">
+                    <h5 style="margin-bottom: 5px;">
                         <a href="<?=$current_url?>?c=<?=$cat_built_parent?>" style="padding: 0;">
                         <?php if ($selected_category == $cat_built_parent) : ?>
                             <span style="color: #1e73be; text-decoration: underline;">Project Built</span>
@@ -257,7 +295,7 @@ function getPostmetaData($post_id) {
                             <span>Project Built</span>
                         <?php endif; ?>
                         </a>
-                    </h4>
+                    </h5>
 
                     <div>
                     <?php
@@ -279,8 +317,8 @@ function getPostmetaData($post_id) {
                 </div>
                 <hr style="border-top: 1px black solid; margin-bottom: 15px;">
                 <!-- Design Project -->
-                <div class="nav_category">
-                    <h6 style="margin-bottom: 5px;">
+                <div class="nav-category">
+                    <h5 style="margin-bottom: 5px;">
                         <a href="<?=$current_url?>?c=<?=$cat_design_parent?>" style="padding: 0;">
                         <?php if ($selected_category == $cat_design_parent) : ?>
                             <span style="color: #1e73be; text-decoration: underline;">Design Project</span>
@@ -288,7 +326,7 @@ function getPostmetaData($post_id) {
                             <span>Design Project</span>
                         <?php endif; ?>
                         </a>
-                    </h4>
+                    </h5>
 
                     <div>
                     <?php
@@ -310,12 +348,34 @@ function getPostmetaData($post_id) {
                 </div>
             </div>
 
-            <div class="right_side">
+            <div class="right-side">
                 <div id="latest-project" style="margin-top: 65px; overflow-y: unset;">
                     <!-- Project Built -->
-                    <div class="nav_category">
+                    <div class="projects-wrapper">
                         <div class="row" style="margin: 0;">
-                            <h6 class="col-md-12 title-lates">Project Built</h6>
+                            <h5 class="col-md-12 title-lates">
+                                Project Built
+                                <i class="fas fa-angle-right toggle-arrow"></i>
+                            </h5>
+                            <!-- sub category only for mobile -->
+                            <div class="left-side mobile-only">
+                            <?php
+                            if (is_array($cat_built_results) && count($cat_built_results)) :
+                                foreach ($cat_built_results as $row) :
+                            ?>
+                                <a href="<?=$current_url?>?c=<?=$row->term_id?>">
+                                    <?php if ($selected_category == $row->term_id) : ?>
+                                    <span style="color: #1e73be; text-decoration: underline;"><?=$row->name?></span>
+                                    <?php else : ?>
+                                    <span><?=$row->name?></span>
+                                    <?php endif; ?>
+                                </a>
+                            <?php
+                                endforeach;
+                            endif;
+                            ?>
+                            </div>
+
                             <?php
                             if (is_array($r_latest_built) && count($r_latest_built)) :
                                 foreach ($r_latest_built as $row) :
@@ -342,9 +402,31 @@ function getPostmetaData($post_id) {
                     </div>
                     <hr style="border-top: 1px black solid; margin-bottom: 15px;">
                     <!-- Design Project -->
-                    <div class="nav_category">
+                    <div class="projects-wrapper">
                         <div class="row" style="margin: 0;">
-                            <h6 class="col-md-12 title-lates">Design Project</h6>
+                            <h5 class="col-md-12 title-lates">
+                                Design Project
+                                <i class="fas fa-angle-right toggle-arrow"></i>
+                            </h5>
+                            <!-- sub category only for mobile -->
+                            <div class="left-side mobile-only">
+                            <?php
+                            if (is_array($cat_built_results) && count($cat_built_results)) :
+                                foreach ($cat_built_results as $row) :
+                            ?>
+                                <a href="<?=$current_url?>?c=<?=$row->term_id?>">
+                                    <?php if ($selected_category == $row->term_id) : ?>
+                                    <span style="color: #1e73be; text-decoration: underline;"><?=$row->name?></span>
+                                    <?php else : ?>
+                                    <span><?=$row->name?></span>
+                                    <?php endif; ?>
+                                </a>
+                            <?php
+                                endforeach;
+                            endif;
+                            ?>
+                            </div>
+                            
                             <?php
                             if (is_array($r_latest_design) && count($r_latest_design)) :
                                 foreach ($r_latest_design as $row) :
@@ -372,11 +454,35 @@ function getPostmetaData($post_id) {
                 </div>
 
                 <div id="categorized-project" class="row" style="margin: 0;">
+                    <h5 class="col-md-12 title-lates">
+                        Project Built
+                        <i class="fas fa-angle-right toggle-arrow"></i>
+                    </h5>
+                    <!-- sub category only for mobile -->
+                    <div class="left-side mobile-only">
+                    <?php
+                    if (is_array($cat_built_results) && count($cat_built_results)) :
+                        foreach ($cat_built_results as $row) :
+                    ?>
+                        <a href="<?=$current_url?>?c=<?=$row->term_id?>">
+                            <?php if ($selected_category == $row->term_id) : ?>
+                            <span style="color: #1e73be; text-decoration: underline;"><?=$row->name?></span>
+                            <?php else : ?>
+                            <span><?=$row->name?></span>
+                            <?php endif; ?>
+                        </a>
+                    <?php
+                        endforeach;
+                    endif;
+                    ?>
+                    </div>
+
                     <?php
                     if (is_array($project_results) && count($project_results)) :
                         foreach ($project_results as $row) :
                             $postmeta = getPostmetaData($row->ID);
                     ?>
+
                         <?php if ($category != $row->category): ?>
                         <div class="col-md-12">
                             <h6><?= $row->category; ?></h6>
@@ -411,16 +517,29 @@ function getPostmetaData($post_id) {
     if (searchParams.has('c')) {
         $("#latest-project").hide();
         $("#categorized-project").show();
-        $(".right_side").css({
+        $(".right-side").css({
             overflowY: "scroll"
         });
 
     } else {
         $("#latest-project").show();
         $("#categorized-project").hide();
-        $(".right_side").css({
+        $(".right-side").css({
             overflowY: "unset"
         });
     }
+
+    const arrows = document.querySelectorAll('.toggle-arrow');
+    const mobileSubCategory = document.querySelectorAll('.left-side.mobile-only');
+    arrows.forEach((arrow, index) => {
+        arrow.addEventListener('click', function() {
+            this.classList.toggle('rotate-down');
+            if (mobileSubCategory[index].classList.contains('show')) {
+                mobileSubCategory[index].classList.remove('show');
+            } else {
+                mobileSubCategory[index].classList.add('show');
+            }
+        });
+    });
 
 </script>

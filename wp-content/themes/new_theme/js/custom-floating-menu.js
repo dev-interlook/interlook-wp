@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Move the second last button up by the height of the rectangle button plus some spacing
         const buttons = document.querySelectorAll('.sfm-floating-menu.bottom-right.sfm-round.vertical .sfm-button');
         const secondLastButton = buttons[buttons.length - 2];
-        console.log(secondLastButton);
+        // console.log(secondLastButton);
         if (secondLastButton) {
             secondLastButton.setAttribute('style', `bottom: ${60+7.5}px !important`);
         }
