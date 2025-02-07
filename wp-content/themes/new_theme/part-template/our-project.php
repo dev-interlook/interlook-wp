@@ -316,7 +316,7 @@ function getPostmetaData($post_id) {
                     <h5 style="margin-bottom: 5px; background-color: black; padding: 10px 15px; color: white;">
                         <a href="<?=$current_url?>?c=<?=$cat_built_parent?>" style="padding: 0;">
                         <?php if ($selected_category == $cat_built_parent) : ?>
-                            <span style="color: #1e73be; text-decoration: underline;">Project Built</span>
+                            <span style="text-decoration: underline;">Project Built</span>
                         <?php else : ?>
                             <span>Project Built</span>
                         <?php endif; ?>
@@ -347,7 +347,7 @@ function getPostmetaData($post_id) {
                     <h5 style="margin-bottom: 5px; background-color: black; padding: 10px 15px; color: white;">
                         <a href="<?=$current_url?>?c=<?=$cat_design_parent?>" style="padding: 0;">
                         <?php if ($selected_category == $cat_design_parent) : ?>
-                            <span style="color: #1e73be; text-decoration: underline;">Design Project</span>
+                            <span style="text-decoration: underline;">Design Project</span>
                         <?php else : ?>
                             <span>Design Project</span>
                         <?php endif; ?>
