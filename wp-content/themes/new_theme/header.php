@@ -109,10 +109,57 @@
                 width: 50% !important;
             }
         }
+
+        /* Prevent the toggle button from being highlighted */
+        .navbar-toggler {
+            border: none;
+            background: transparent !important;
+        }
+        .navbar-toggler:focus,
+        .navbar-toggler:active {
+            outline: none;
+            box-shadow: none;
+            background: transparent;
+        }
+        .navbar-toggler .icon-bar {
+            color: inherit;
+        }
+        .navbar-toggler,
+        .navbar-toggler:hover,
+        .navbar-toggler:focus,
+        .navbar-toggler:active {
+            border: none;
+            background: transparent !important;
+            outline: none;
+            box-shadow: none;
+        }
+        .navbar-toggler .icon-bar,
+        .navbar-toggler:hover .icon-bar,
+        .navbar-toggler:focus .icon-bar,
+        .navbar-toggler:active .icon-bar {
+            color: #000 !important; /* Set this to your desired original color */
+        }
+        .ti-line-double,
+        .ti-line-double:hover,
+        .ti-line-double:focus,
+        .ti-line-double:active {
+            color: #000 !important; /* Set this to your desired original color */
+        }
     </style>
 </head>
 
-
+<script>
+document.addEventListener('click', function(event) {
+    const navbar = document.getElementById('navbarSupportedContent');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    
+    if (!navbar.contains(event.target) && !navbarToggler.contains(event.target)) {
+        if (navbar.classList.contains('show')) {
+            navbarToggler.click();
+        }
+    }
+});
+</script>
 
 <body>
 
