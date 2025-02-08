@@ -3960,3 +3960,23 @@ min-width: 100%;}
     z-index: 9999;
 }
 /* END OF NEW STATIC BOOKING FORM DESIGN */
+
+/* NEW CAREER PAGE DESIGN */
+
+.career {
+    margin: 150px 10% 50px 10% !important;
+}
+.career-intro {
+    line-height: 1.3;
+    margin-top: 70px;
+}
+@media screen and (max-width: 480px) {
+    .career {
+        margin: 150px 0px 50px 0px !important;
+    }
+    .career-intro {
+        line-height: 1.3;
+        margin-top: 0px;
+    }
+}
+/* END OF NEW CAREER PAGE DESIGN */

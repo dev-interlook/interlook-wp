@@ -16,23 +16,6 @@
 
 ?>
 
-<style>
-    .career {
-        margin: 150px 10% 50px 10% !important;
-    }
-    .career-intro {
-        margin-top: 70px;
-    }
-    @media screen and (max-width: 480px) {
-        .career {
-            margin: 150px 0px 50px 0px !important;
-        }
-        .career-intro {
-            margin-top: 0px;
-        }
-    }
-</style>
-
 <?php get_header();?>
 <!-- Content -->
 <div class="content-wrapper">
@@ -44,7 +27,7 @@
                     <h1>Career</h1>
                 </div>
                 <div class="col-md-8">
-                    <div class="career-intro" style="line-height: 1.3;">
+                    <div class="career-intro">
                         <?php echo nl2br(get_field('career')); ?>
                     </div>
                 </div>
@@ -70,4 +53,4 @@
             </div>
         </div>
     </section>
-<?php get_footer();?>
+    <?php get_footer();?>
