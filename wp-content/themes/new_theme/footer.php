@@ -19,7 +19,7 @@
                 <?php if ( have_rows( 'content_footer', 'option' ) ) : ?>
                     <div class="row">
 	                <?php while ( have_rows( 'content_footer', 'option' ) ) : the_row(); ?>
-                        <?php if (get_row_index() == 3) : ?>
+                        <?php if (get_row_index() >= 3) : ?>
                         <div class="item fotcont col-md-6 mb-30 mt-50">
                         <?php else : ?>
                         <div class="item fotcont col-md-6 mb-20">
