@@ -145,6 +145,12 @@
         .ti-line-double:active {
             color: #000 !important; /* Set this to your desired original color */
         }
+
+        @media (min-width: 1200px) {
+            .navbar-nav {
+                padding-left: 10rem;
+            }
+        }
     </style>
 </head>
 
