@@ -149,7 +149,7 @@
 
         @media (min-width: 1200px) {
             .navbar-nav {
-                padding-left: 10rem;
+                padding-left: 17rem;
             }
         }
     </style>
