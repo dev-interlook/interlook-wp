@@ -29,6 +29,7 @@
     <style>
         .logo-nav {
             position: absolute;
+            margin-top: 5px;
         }
         @media (max-width: 991px) {
             .logo-nav {
