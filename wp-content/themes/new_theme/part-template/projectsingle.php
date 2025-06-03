@@ -133,6 +133,39 @@ get_header(); ?>
         position: absolute;
         margin-top: 15px;
     }
+
+    /* Project Navigation Arrows */
+    .project-nav {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 80px;
+        background: rgba(0, 0, 0, 0.5);
+        color: white !important;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        text-decoration: none !important;
+        z-index: 1000;
+        transition: all 0.3s ease;
+    }
+
+    .project-nav:hover {
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    .project-nav-prev {
+        left: 0;
+        border-radius: 0 5px 5px 0;
+    }
+
+    /* If you also want the next arrow on the right side */
+    .project-nav-next {
+        right: 0;
+        border-radius: 5px 0 0 5px;
+    }
 </style>
 
 <!-- Counting gallery item -->
@@ -146,6 +179,20 @@ if ( have_rows( 'gallery' ) ) :
 endif;
 
 $moreImg = $totalImg - 6;
+
+// Next Post
+$next_post = get_next_post();
+$next_url = '';
+if ($next_post) {
+    $next_url = get_site_url() . '/projects/' . $next_post->post_name;
+}
+
+// Previous Post
+$prev_post = get_previous_post();
+$prev_url = '';
+if ($prev_post) {
+    $prev_url = get_site_url() . '/projects/' . $prev_post->post_name;
+}
 ?>
 
 <!-- Content -->
@@ -156,6 +203,21 @@ $moreImg = $totalImg - 6;
             <div class="content-lines"></div>
         </div>
     </section>
+
+    <!-- Previous Project Navigation -->
+    <?php if (!empty($prev_url)): ?>
+    <a href="<?php echo esc_url($prev_url); ?>" class="project-nav project-nav-prev" title="Previous Project">
+        <i class="fas fa-chevron-left"></i>
+    </a>
+    <?php endif; ?>
+
+    <!-- Next Project Navigation -->
+    <?php if (!empty($next_url)): ?>
+    <a href="<?php echo esc_url($next_url); ?>" class="project-nav project-nav-next" title="Next Project">
+        <i class="fas fa-chevron-right"></i>
+    </a>
+    <?php endif; ?>
+
     <!-- Header Banner -->
     <!-- <section class="banner-header banner-img valign bg-img bg-fixed" data-overlay-darkgray="5" data-background="<?php the_field( 'cover' ); ?>">
     </section> -->
