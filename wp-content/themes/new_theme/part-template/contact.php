@@ -36,7 +36,7 @@
     <!-- Contact -->
     <section>
         <div class="container">
-            <div class="row">
+            <div class="row d-none">
                 <div class="col-md-12 animate-box mt-50" data-animate-effect="fadeInUp">
                 <?php if ( have_rows( 'banner' ) ) : ?>
                     <?php while ( have_rows( 'banner' ) ) : the_row(); ?>
@@ -45,7 +45,8 @@
                 <?php endif; ?>
                 </div>
             </div>
-            <div class="row mb-90 d-flex">
+            <!-- <div class="row mb-90 d-flex"> -->
+            <div class="row mb-90 d-none">
             <?php if ( have_rows( 'contact' ) ) : ?>
                 <?php while ( have_rows( 'contact' ) ) : the_row(); ?>
                 <table class="col-md-10 animate-box table-borderless" style="padding: 0;">
