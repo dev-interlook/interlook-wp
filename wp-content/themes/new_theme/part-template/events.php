@@ -26,7 +26,7 @@
     </section>
     <!-- Events -->
     <section>
-        <div class="container mt-60">
+        <div class="container mt-75">
             <div class="events-header">
                 <h1>Events</h1>
                 <p class="events-subtitle">Don't miss out! Find all the latest information on our events and exhibitions – from innovative showcases to engaging workshops.</p>
