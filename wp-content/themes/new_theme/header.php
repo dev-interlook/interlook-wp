@@ -12,7 +12,7 @@
 
     <title><?php bloginfo( 'name' ); ?></title>
 
-    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.png" />
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon-big.png" />
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/plugins.css?v=timestamp"  />
 
