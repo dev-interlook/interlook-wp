@@ -172,10 +172,6 @@ get_header();
         margin: auto;
     }
 
-    .active {
-        background-color: #717171;
-    }
-
     /* Fading animation */
     .fade {
         animation-name: fade;

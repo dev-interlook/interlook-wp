@@ -200,7 +200,18 @@ document.addEventListener('click', function(event) {
                     <ul class="navbar-nav mx-auto">
                         <?php if ( have_rows( 'menu', 'option' ) ) : ?>
                             <?php while ( have_rows( 'menu', 'option' ) ) : the_row(); ?>
-                                <li class="nav-item"><a class="nav-link" href="<?php the_sub_field( 'link' ); ?>" ><?php the_sub_field( 'title' ); ?></a></li>
+                                <?php
+                                $current_path = strtok($_SERVER['REQUEST_URI'], '?');
+                                $current_path = rtrim($current_path, '/');
+                                $menu_link = strtok(get_sub_field('link'), '?');
+                                $menu_link = rtrim($menu_link, '/');
+                                $is_active = ($current_path === $menu_link) ? 'active' : '';
+                                ?>
+                                <li class="nav-item">
+                                    <a class="nav-link <?php echo $is_active; ?>" href="<?php the_sub_field( 'link' ); ?>" >
+                                        <?php the_sub_field( 'title' ); ?>
+                                    </a>
+                                </li>
                             <?php endwhile; ?>
                         <?php else : ?>
                             <?php // no rows found ?>
