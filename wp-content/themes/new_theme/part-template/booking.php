@@ -17,23 +17,26 @@
 
 
 get_header(); ?>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
   <!-- Content -->
-  <?php if ( have_rows( 'banner' ) ) : ?>
-	<?php while ( have_rows( 'banner' ) ) : the_row(); ?>
   <div class="content-wrapper">
-    <!-- Lines -->
-    <section class="content-lines-wrapper">
-        <div class="content-lines-inner">
-            <div class="content-lines"></div>
-        </div>
-    </section>
-    <!-- Header Banner -->
-    <section class="banner-header banner-img valign bg-img bg-fixed"
-      style="background-position: center;"
-      data-overlay-darkgray="5"
-      data-background="<?php the_sub_field( 'background' ); ?>"></section>
-      <!-- Blog  -->
+    <?php if ( have_rows( 'banner' ) ) : ?>
+      <?php while ( have_rows( 'banner' ) ) : the_row(); ?>
+        <!-- Lines -->
+        <section class="content-lines-wrapper">
+            <div class="content-lines-inner">
+                <div class="content-lines"></div>
+            </div>
+        </section>
+        <!-- Header Banner -->
+        <section class="banner-header banner-img valign bg-img bg-fixed"
+          style="background-position: center;"
+          data-overlay-darkgray="5"
+          data-background="<?php the_sub_field( 'background' ); ?>">
+        </section>
+      <?php endwhile; ?>
+    <?php endif; ?>
+    <!-- Blog  -->
     <section class="bauen-blog3 section-padding2">
 			<div class="container">
 				<div class="row">
@@ -105,8 +108,7 @@ get_header(); ?>
         <span class="visually-hidden">Loading...</span>
       </div>
     </div>
-  <?php endwhile; ?>
-  <?php endif; ?>
+  </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
